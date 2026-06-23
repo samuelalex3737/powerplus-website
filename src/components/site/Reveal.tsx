@@ -1,21 +1,18 @@
-import { motion, useReducedMotion, type MotionProps } from "framer-motion";
-import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function Reveal({
   children,
   delay = 0,
   className,
-  as: As = "div",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
-  as?: keyof typeof motion;
 }) {
   const reduce = useReducedMotion();
-  const Comp = motion[As] as React.ComponentType<MotionProps & { className?: string }>;
   return (
-    <Comp
+    <motion.div
       initial={reduce ? false : { opacity: 0, y: 24 }}
       whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -23,7 +20,7 @@ export function Reveal({
       className={className}
     >
       {children}
-    </Comp>
+    </motion.div>
   );
 }
 
@@ -41,7 +38,6 @@ export function CountUp({ to, suffix = "", duration = 2 }: { to: number; suffix?
   );
 }
 
-import { useEffect, useRef, useState } from "react";
 function CountInner({ to, duration }: { to: number; duration: number }) {
   const [val, setVal] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
