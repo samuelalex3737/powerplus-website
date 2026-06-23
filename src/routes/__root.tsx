@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import logoIconAsset from "../assets/logo-icon.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +78,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Power Plus LLC — Energy Solutions & AI Technology in the UAE" },
+      {
+        name: "description",
+        content:
+          "Power Plus LLC delivers industrial generators, energy-efficiency systems, and AI-powered access control across the UAE. Based in Shams Free Zone, Sharjah.",
+      },
+      { name: "author", content: "Power Plus LLC" },
+      { property: "og:title", content: "Power Plus LLC — Powering Tomorrow's Future Solutions" },
+      {
+        property: "og:description",
+        content:
+          "Generators, energy efficiency, and AI access control — engineered in the UAE by Power Plus LLC.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      { rel: "icon", type: "image/png", href: logoIconAsset.url },
+      { rel: "apple-touch-icon", href: logoIconAsset.url },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
     ],
   }),
@@ -104,6 +120,11 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('pp-theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}`,
+          }}
+        />
       </head>
       <body>
         {children}
