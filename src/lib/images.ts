@@ -1,26 +1,35 @@
-import logoFullAsset from "@/assets/logo-full.asset.json";
-import logoIconAsset from "@/assets/logo-icon.asset.json";
+import logoFullAsset from "@/assets/logo-full-new.asset.json";
+import logoIconAsset from "@/assets/logo-icon-new.asset.json";
+import josephAsset from "@/assets/joseph.asset.json";
 
 export const LOGO_FULL = logoFullAsset.url;
 export const LOGO_ICON = logoIconAsset.url;
+export const JOSEPH_PHOTO = josephAsset.url;
+
+const px = (id: string, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const IMG = {
-  heroSkyline:
-    "https://images.pexels.com/photos/13862680/pexels-photo-13862680.jpeg?auto=compress&cs=tinysrgb&w=1920",
-  servicesEnergy:
-    "https://images.pexels.com/photos/4254165/pexels-photo-4254165.jpeg?auto=compress&cs=tinysrgb&w=900",
-  servicesAI:
-    "https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=900",
-  servicesGenerators:
-    "https://images.pexels.com/photos/2898199/pexels-photo-2898199.jpeg?auto=compress&cs=tinysrgb&w=900",
-  energyAudit:
-    "https://images.pexels.com/photos/9875415/pexels-photo-9875415.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  aiAccess:
-    "https://images.pexels.com/photos/7034454/pexels-photo-7034454.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  generatorCummins:
-    "https://images.pexels.com/photos/3855962/pexels-photo-3855962.jpeg?auto=compress&cs=tinysrgb&w=900",
-  generatorPerkins:
-    "https://images.pexels.com/photos/3862376/pexels-photo-3862376.jpeg?auto=compress&cs=tinysrgb&w=900",
-  about:
-    "https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=1000",
+  heroSkyline: px("1534411", 1920),
+  servicesEnergy: px("1170412", 900),
+  servicesAI: px("430208", 900),
+  servicesGenerators: px("236089", 900),
+  whyUsBg: px("257700", 1600),
+  energyLighting: px("1170412", 900),
+  energySolar: px("9875441", 900),
+  energyControls: px("590022", 900),
+  energyHvac: px("3862132", 900),
+  energyIndustrial: px("257700", 900),
+  energyAudit: px("162568", 900),
+  energyMonitoring: px("2760243", 900),
+  energyVentilation: px("210881", 900),
+  aiHero: px("3861969", 1600),
+  aiCapture: px("430208", 900),
+  aiProcess: px("8386434", 900),
+  aiAccess: px("1004409", 900),
+  generators: px("236089", 1600),
+  generatorCummins: px("236089", 900),
+  generatorPerkins: px("3862376", 900),
+  ancillary: px("210881", 900),
+  ctaBanner: px("1108572", 1600),
 };
