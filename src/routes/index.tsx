@@ -1,46 +1,37 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Toaster } from "sonner";
+import { TopBar } from "@/components/site/TopBar";
 import { PillNav } from "@/components/site/PillNav";
 import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
+import { WhyUs } from "@/components/site/WhyUs";
 import { Energy } from "@/components/site/Energy";
 import { AI } from "@/components/site/AI";
 import { Generators } from "@/components/site/Generators";
 import { About } from "@/components/site/About";
+import { CTABanner } from "@/components/site/CTABanner";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsapp } from "@/components/site/FloatingWhatsapp";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Power Plus LLC — Energy Solutions & AI Technology in the UAE" },
-      {
-        name: "description",
-        content:
-          "Industrial generators, energy efficiency systems, and AI access control across the UAE. Engineered by Power Plus LLC, Shams Free Zone, Sharjah.",
-      },
-      { property: "og:title", content: "Power Plus LLC — Powering Tomorrow's Future Solutions" },
-      {
-        property: "og:description",
-        content:
-          "Cummins & Perkins generators, energy-efficiency retrofits, and AI-powered face-recognition access control. UAE-based, engineer-led.",
-      },
-    ],
-  }),
+  head: () => ({ meta: [] }),
   component: Index,
 });
 
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <TopBar />
       <PillNav />
       <Hero />
       <Services />
+      <WhyUs />
       <Energy />
       <AI />
       <Generators />
       <About />
+      <CTABanner />
       <Contact />
       <Footer />
       <FloatingWhatsapp />
