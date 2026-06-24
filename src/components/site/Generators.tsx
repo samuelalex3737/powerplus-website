@@ -1,4 +1,4 @@
-import { Cog, Gauge, Wrench, ShieldCheck, MessageCircle } from "lucide-react";
+import { Battery, Wrench, Truck, Phone, MessageCircle, Box } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { IMG } from "@/lib/images";
 import { COMPANY } from "@/lib/constants";
@@ -6,32 +6,27 @@ import { COMPANY } from "@/lib/constants";
 const BRANDS = [
   {
     name: "Cummins",
-    range: "20 kVA – 2,500 kVA",
-    body: "Heavy-duty diesel gensets for data centers, hospitals, and industrial sites where downtime isn't an option.",
+    badge: "Global Leader",
+    range: "20 kVA – 2,500 kVA+",
+    body: "The world's leading power equipment manufacturer. Cummins generators are trusted across the UAE for unmatched reliability in industrial, commercial, and infrastructure applications.",
+    industries: ["Construction", "Data Centres", "Healthcare", "Hospitality", "Industrial", "Infrastructure"],
     img: IMG.generatorCummins,
   },
   {
     name: "Perkins",
-    range: "10 kVA – 2,000 kVA",
-    body: "Reliable, fuel-efficient power for commercial buildings, retail, and standby applications.",
+    badge: "Proven in the Gulf",
+    range: "10 kVA – 2,000 kVA+",
+    body: "Perkins engines power 1 in 5 non-road vehicles worldwide. Proven performers in Middle Eastern climates — dependable, fuel-efficient, and field-tested in the region.",
+    industries: ["Oil & Gas", "Telecom", "Manufacturing", "Commercial", "Agriculture", "Remote Sites"],
     img: IMG.generatorPerkins,
   },
 ];
 
 const SUPPLY = [
-  { icon: Cog, label: "Diesel gensets" },
-  { icon: Gauge, label: "ATS panels" },
-  { icon: ShieldCheck, label: "Synchronization" },
-  { icon: Wrench, label: "Service & spares" },
-];
-
-const ANCILLARY = [
-  "Fuel tanks and day tanks",
-  "Exhaust silencers and stacks",
-  "Acoustic and weatherproof canopies",
-  "Load banks and commissioning",
-  "Cable, switchgear, and cable trays",
-  "Annual maintenance contracts",
+  { icon: Battery, title: "New Generators", body: "Full Cummins and Perkins kVA range" },
+  { icon: Wrench, title: "Genuine OEM Spare Parts", body: "Original manufacturer components" },
+  { icon: Truck, title: "UAE-Wide Delivery", body: "Sharjah, Dubai, Abu Dhabi, Northern Emirates" },
+  { icon: Phone, title: "Technical Consultation", body: "Right spec for your load requirements" },
 ];
 
 export function Generators() {

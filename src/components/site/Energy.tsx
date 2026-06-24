@@ -109,7 +109,7 @@ export function Energy() {
                         border: "1px solid #94C120",
                         borderRadius: 8,
                       }}
-                      formatter={(v: number) => `${v}%`}
+                      formatter={(v) => `${v}%`}
                     />
                     <Legend
                       wrapperStyle={{ fontSize: 12 }}
