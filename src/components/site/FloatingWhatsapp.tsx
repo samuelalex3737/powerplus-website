@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowUp } from "lucide-react";
+import { MessageCircle, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { COMPANY } from "@/lib/constants";
 
@@ -20,10 +20,15 @@ export function FloatingWhatsapp() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
-          className="fixed bottom-6 left-6 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-ink text-brand ring-2 ring-brand shadow-xl hover:scale-105 transition"
-          style={{ backgroundColor: "var(--color-ink)" }}
+          className="fixed right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-xl transition hover:scale-105"
+          style={{
+            bottom: "6rem",
+            background: "var(--background)",
+            border: "1px solid #94C120",
+            color: "#94C120",
+          }}
         >
-          <ArrowUp className="h-5 w-5" />
+          <ChevronUp className="h-5 w-5" />
         </button>
       )}
       {show && (
@@ -31,15 +36,17 @@ export function FloatingWhatsapp() {
           href={COMPANY.whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="fixed bottom-6 right-6 z-40"
+          aria-label="Chat with Joseph on WhatsApp"
+          title="Chat with Joseph"
+          className="fixed bottom-6 right-6 z-50"
         >
           <span className="relative inline-flex h-14 w-14 items-center justify-center">
             <span
               aria-hidden
-              className="absolute inset-0 rounded-full bg-brand opacity-60 animate-ping"
+              className="absolute inset-0 rounded-full opacity-50 animate-ping"
+              style={{ background: "#94C120" }}
             />
-            <span className="relative flex h-14 w-14 items-center justify-center rounded-full bg-brand text-ink shadow-2xl">
+            <span className="relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-2xl" style={{ background: "#94C120" }}>
               <MessageCircle className="h-7 w-7" />
             </span>
           </span>
