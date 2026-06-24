@@ -48,9 +48,9 @@ export const sendContact = createServerFn({ method: "POST" })
 
     const { error } = await resend.emails.send({
       from: "Power Plus Website <onboarding@resend.dev>",
-      to: ["joseph@powerplusllc.com"],
+      to: ["info@powerplusllc.net"],
       replyTo: data.email,
-      subject: `[Power Plus] ${data.subject} — ${data.name}`,
+      subject: `New enquiry via powerplusllc.net — ${data.subject}`,
       html,
     });
 

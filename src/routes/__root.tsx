@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import logoIconAsset from "../assets/logo-icon.asset.json";
+import logoIconAsset from "../assets/logo-icon-new.asset.json";
 
 function NotFoundComponent() {
   return (
@@ -78,20 +78,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Power Plus LLC — Energy Solutions & AI Technology in the UAE" },
+      {
+        title:
+          "Power Plus LLC | Energy Efficiency, AI Solutions & Generators | Sharjah UAE",
+      },
       {
         name: "description",
         content:
-          "Power Plus LLC delivers industrial generators, energy-efficiency systems, and AI-powered access control across the UAE. Based in Shams Free Zone, Sharjah.",
+          "Power Plus LLC — turnkey energy efficiency, AI building access control, and Cummins & Perkins diesel generator supply across UAE. Zero capex model. Shams Free Zone, Sharjah.",
       },
       { name: "author", content: "Power Plus LLC" },
-      { property: "og:title", content: "Power Plus LLC — Powering Tomorrow's Future Solutions" },
+      { property: "og:title", content: "Power Plus LLC | Sharjah, UAE" },
       {
         property: "og:description",
         content:
-          "Generators, energy efficiency, and AI access control — engineered in the UAE by Power Plus LLC.",
+          "Energy efficiency, AI access control, generator supply. Zero upfront cost. Serving the UAE from Shams Free Zone, Sharjah.",
       },
       { property: "og:type", content: "website" },
+      { name: "robots", content: "index, follow" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

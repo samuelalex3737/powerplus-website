@@ -1,48 +1,42 @@
 export const COMPANY = {
   legalName: "Power Plus LLC",
   shortName: "Power Plus",
-  tagline: "Powering Tomorrow's Future Solutions",
+  name: "Power Plus LLC",
+  tagline: "Powering Smart Decisions, Fueling Future Solutions",
   director: "Joseph Alex",
-  directorRole: "Owner & Director",
-  email: "joseph@powerplusllc.com",
+  directorRole: "Director",
+  title: "Director",
+  email: "info@powerplusllc.net",
+  emailJoseph: "joseph@powerplusllc.com",
   phone: "+971 50 230 6745",
   phoneRaw: "+971502306745",
-  whatsappLink: "https://wa.me/971502306745",
+  whatsappLink:
+    "https://wa.me/971502306745?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Power%20Plus%20services.",
+  whatsappBase: "https://wa.me/971502306745",
+  whatsappGenerator:
+    "https://wa.me/971502306745?text=Hi%20Joseph%2C%20I%20need%20a%20generator%20quote.%20Please%20advise.",
+  whatsappAi:
+    "https://wa.me/971502306745?text=Hi%20Joseph%2C%20I%27d%20like%20to%20know%20more%20about%20your%20AI%20access%20control%20system.",
+  whatsappAudit:
+    "https://wa.me/971502306745?text=Hi%20Joseph%2C%20I%27d%20like%20a%20free%20energy%20audit%20for%20my%20building.",
   address: {
     line1: "Shams Free Zone",
-    line2: "Sharjah, United Arab Emirates",
+    line2: "Sharjah, U.A.E",
+    full: "Shams Free Zone, Sharjah, U.A.E",
   },
   mapsEmbed:
-    "https://www.google.com/maps?q=Shams+Free+Zone+Sharjah+UAE&output=embed",
-  hours: "Sun – Thu · 9:00 AM – 6:00 PM (GST)",
-  founded: 2017,
-  bio: `Joseph Alex is the Owner and Director of Power Plus LLC, an energy solutions and AI technology company based in Shams Free Zone, Sharjah. With nearly a decade of hands-on experience supplying generators, ancillary equipment, and energy-efficiency systems across the UAE, Joseph has built Power Plus into a trusted partner for businesses that refuse to choose between cost, comfort, and conscience. Today the company is expanding into AI-powered access control — bringing the same engineering rigor to physical security that it has long brought to power.`,
-  whyChooseUs: [
-    "Direct relationships with Cummins and Perkins",
-    "UAE-based support — no offshore call centers",
-    "Engineer-led consultations, not sales pitches",
-    "Transparent pricing and honest timelines",
-  ],
-  values: [
-    {
-      title: "Engineering first",
-      body: "Every recommendation starts with the numbers — load profile, runtime, redundancy.",
-    },
-    {
-      title: "Long-term partnership",
-      body: "We're here for the install, the commissioning, and the next ten years of service.",
-    },
-    {
-      title: "Honest economics",
-      body: "If a smaller solution does the job, we tell you. Your trust outlives any single sale.",
-    },
-  ],
+    "https://maps.google.com/maps?q=Sharjah+Media+City+Shams+Free+Zone+Sharjah&output=embed",
+  hours: "Mon – Sat: 8AM – 7PM",
+  founded: 2020,
+  website: "www.powerplusllc.net",
+  linkedin: "https://www.linkedin.com/in/joseph-alex-227aa6137/",
+  green: "#94C120",
   subjects: [
-    "Generator sizing & quote",
-    "Energy efficiency audit",
-    "AI access control demo",
-    "Service & maintenance",
-    "Spare parts enquiry",
-    "Something else",
+    "General Inquiry",
+    "Free Energy Audit",
+    "Generator Quote (Cummins / Perkins)",
+    "AI Access Control Demo",
+    "Flow Meters / Equipment",
+    "Other",
   ],
 } as const;

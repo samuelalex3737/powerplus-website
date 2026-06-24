@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, Clock, MessageCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Reveal } from "./Reveal";
 import { COMPANY } from "@/lib/constants";
@@ -38,117 +38,123 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="px-6 py-24 text-white" style={{ background: "#111A05" }}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-brand">
-              Contact
-            </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
-              Let's talk about your project.
-            </h2>
-            <p className="mt-4 text-base text-muted-foreground">
-              Send the form below and Joseph will reply personally within one
-              business day. Need an answer faster? Use WhatsApp.
+            <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "#94C120" }}>Contact</p>
+            <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">Let's Talk Energy</h2>
+            <p className="mt-4 text-base text-white/70">
+              Free energy audit, generator quote, or AI access control demo — get in touch with Joseph today.
             </p>
           </div>
         </Reveal>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
           <Reveal>
-            <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-card p-7 shadow-sm">
+            <form onSubmit={onSubmit} className="rounded-3xl p-7" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(148,193,32,0.25)" }}>
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" name="name" required />
-                <Field label="Company" name="company" />
-                <Field label="Email" name="email" type="email" required />
-                <Field label="Phone" name="phone" type="tel" placeholder="+971 50 000 0000" />
+                <Field label="Full Name" name="name" required />
+                <Field label="Company Name" name="company" />
+                <Field label="Email Address" name="email" type="email" required />
+                <Field label="Phone Number" name="phone" type="tel" defaultValue="+971 " />
               </div>
               <div className="mt-4">
-                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                <label htmlFor="subject" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>Subject</label>
                 <select
                   id="subject"
                   name="subject"
                   required
                   defaultValue={COMPANY.subjects[0]}
-                  className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
+                  className="mt-1.5 w-full rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(148,193,32,0.25)",
+                    color: "#E8F5CC",
+                  }}
                 >
                   {COMPANY.subjects.map((s) => (
-                    <option key={s}>{s}</option>
+                    <option key={s} style={{ color: "#111A05" }}>{s}</option>
                   ))}
                 </select>
               </div>
               <div className="mt-4">
-                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                <label htmlFor="message" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>Message <span style={{ color: "#94C120" }}>*</span></label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows={5}
                   maxLength={4000}
-                  className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
+                  className="mt-1.5 w-full rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2"
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    border: "1px solid rgba(148,193,32,0.25)",
+                    color: "#E8F5CC",
+                  }}
                   placeholder="Tell us about your site, load, timeline…"
                 />
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold disabled:opacity-60"
-                style={{ color: "var(--color-ink)" }}
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white disabled:opacity-60"
+                style={{ background: "#94C120" }}
               >
                 {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-                {loading ? "Sending…" : "Send message"}
+                {loading ? "Sending…" : "Send Message →"}
               </button>
             </form>
           </Reveal>
 
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-6">
-              <div className="rounded-3xl border border-border bg-card p-7">
-                <h3 className="text-lg font-bold">Direct line</h3>
+              <div className="rounded-3xl p-7" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(148,193,32,0.2)" }}>
+                <h3 className="text-lg font-bold text-white">Direct line</h3>
                 <ul className="mt-4 space-y-4 text-sm">
                   <li className="flex items-start gap-3">
-                    <Phone className="mt-0.5 h-5 w-5 text-brand" />
-                    <a href={`tel:${COMPANY.phoneRaw}`} className="font-semibold hover:text-brand">
+                    <Phone className="mt-0.5 h-5 w-5" style={{ color: "#94C120" }} />
+                    <a href={`tel:${COMPANY.phoneRaw}`} className="font-semibold text-white hover:opacity-80">
                       {COMPANY.phone}
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Mail className="mt-0.5 h-5 w-5 text-brand" />
-                    <a href={`mailto:${COMPANY.email}`} className="font-semibold hover:text-brand break-all">
+                    <Mail className="mt-0.5 h-5 w-5" style={{ color: "#94C120" }} />
+                    <a href={`mailto:${COMPANY.email}`} className="font-semibold break-all text-white hover:opacity-80">
                       {COMPANY.email}
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin className="mt-0.5 h-5 w-5 text-brand" />
-                    <span>
-                      {COMPANY.address.line1}
-                      <br />
-                      {COMPANY.address.line2}
-                    </span>
+                    <MapPin className="mt-0.5 h-5 w-5" style={{ color: "#94C120" }} />
+                    <span className="text-white/80">{COMPANY.address.full}</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Clock className="mt-0.5 h-5 w-5 text-brand" />
-                    <span>{COMPANY.hours}</span>
+                    <Clock className="mt-0.5 h-5 w-5" style={{ color: "#94C120" }} />
+                    <span className="text-white/80">{COMPANY.hours}</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Globe className="mt-0.5 h-5 w-5" style={{ color: "#94C120" }} />
+                    <span className="text-white/80">{COMPANY.website}</span>
                   </li>
                 </ul>
                 <a
                   href={COMPANY.whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-bold"
-                  style={{ color: "var(--color-ink)" }}
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white"
+                  style={{ background: "#94C120" }}
                 >
                   <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
                 </a>
               </div>
 
-              <div className="overflow-hidden rounded-3xl border border-border">
+              <div className="overflow-hidden rounded-3xl" style={{ border: "1px solid rgba(148,193,32,0.2)" }}>
                 <iframe
                   title="Power Plus LLC location"
                   src={COMPANY.mapsEmbed}
                   loading="lazy"
-                  className="h-64 w-full"
+                  allowFullScreen
+                  className="h-56 w-full"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
@@ -166,18 +172,20 @@ function Field({
   type = "text",
   required,
   placeholder,
+  defaultValue,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
   placeholder?: string;
+  defaultValue?: string;
 }) {
   return (
     <div>
-      <label htmlFor={name} className="text-sm font-medium">
+      <label htmlFor={name} className="text-sm font-medium" style={{ color: "#E8F5CC" }}>
         {label}
-        {required && <span className="text-brand"> *</span>}
+        {required && <span style={{ color: "#94C120" }}> *</span>}
       </label>
       <input
         id={name}
@@ -185,8 +193,14 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         maxLength={255}
-        className="mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-sm focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
+        className="mt-1.5 w-full rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2"
+        style={{
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(148,193,32,0.25)",
+          color: "#E8F5CC",
+        }}
       />
     </div>
   );
