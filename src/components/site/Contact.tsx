@@ -15,7 +15,10 @@ export function Contact() {
       name: String(fd.get("name") || ""),
       company: String(fd.get("company") || ""),
       email: String(fd.get("email") || ""),
-      phone: String(fd.get("phone") || ""),
+      phone: (() => {
+        const v = String(fd.get("phone") || "").trim();
+        return v ? `+971 ${v}` : "";
+      })(),
       subject: String(fd.get("subject") || ""),
       message: String(fd.get("message") || ""),
     };
