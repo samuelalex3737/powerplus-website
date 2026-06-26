@@ -20,7 +20,7 @@ export const IMG = {
   energyControls: px("590022", 900),
   energyHvac: px("3862132", 900),
   energyIndustrial: px("257700", 900),
-  energyAudit: px("162568", 900),
+  energyAudit: px("3183197", 900),
   energyMonitoring: px("2760243", 900),
   energyVentilation: px("210881", 900),
   aiHero: px("3861969", 1600),
