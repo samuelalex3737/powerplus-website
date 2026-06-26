@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calculator, Leaf } from "lucide-react";
 import {
   PieChart,
@@ -41,9 +41,15 @@ export function Energy() {
   const low = Math.round(annual * 0.25);
   const high = Math.round(annual * 0.4);
   const [chartH, setChartH] = useState(380);
-  if (typeof window !== "undefined") {
-    // updated via effect below
-  }
+  useEffect(() => {
+    const calc = () => {
+      const w = window.innerWidth;
+      setChartH(w < 640 ? 260 : w < 1024 ? 320 : 380);
+    };
+    calc();
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
 
   return (
     <section id="energy" className="relative px-6 py-24" style={{ background: "var(--pp-section-alt)" }}>
