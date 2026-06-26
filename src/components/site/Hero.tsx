@@ -74,21 +74,14 @@ export function Hero() {
 
     {/* Stats bar — own band below hero */}
     <div style={{ background: "#1C2E0A" }}>
-      <div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
+      <div className="pp-stats mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
         {[
           { n: "2020", label: "Founded" },
           { n: "10,000+", label: "Lights Retrofitted" },
           { n: "25–40%", label: "Avg. Energy Saved" },
           { n: "24/7", label: "Support" },
-        ].map((s, i) => (
-          <div
-            key={s.label}
-            className="px-4 py-5 text-center md:px-6 md:py-8"
-            style={{
-              borderRight: i % 2 === 0 ? "1px solid rgba(148,193,32,0.2)" : undefined,
-              borderBottom: i < 2 ? "1px solid rgba(148,193,32,0.2)" : undefined,
-            }}
-          >
+        ].map((s) => (
+          <div key={s.label} className="pp-stat px-4 py-5 text-center md:px-6 md:py-8">
             <div
               className="font-extrabold leading-tight"
               style={{ color: "#94C120", fontSize: "clamp(1.4rem, 4vw, 2.2rem)" }}
@@ -105,10 +98,12 @@ export function Hero() {
         ))}
       </div>
       <style>{`
+        .pp-stat { border-right: 1px solid rgba(148,193,32,0.2); border-bottom: 1px solid rgba(148,193,32,0.2); }
+        .pp-stats > .pp-stat:nth-child(2n) { border-right: none; }
+        .pp-stats > .pp-stat:nth-child(n+3) { border-bottom: none; }
         @media (min-width: 768px) {
-          [data-stats-bar] > div { border-bottom: none !important; }
-          [data-stats-bar] > div:not(:last-child) { border-right: 1px solid rgba(148,193,32,0.2) !important; }
-          [data-stats-bar] > div:last-child { border-right: none !important; }
+          .pp-stat { border-bottom: none !important; border-right: 1px solid rgba(148,193,32,0.2) !important; }
+          .pp-stats > .pp-stat:last-child { border-right: none !important; }
         }
       `}</style>
     </div>
