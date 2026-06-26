@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Calculator, Leaf } from "lucide-react";
 import {
   PieChart,
@@ -24,21 +24,32 @@ const TILES = [
 ];
 
 const ENERGY_DATA = [
-  { name: "Chillers", value: 57.5, color: "#94C120" },
-  { name: "Other Common Equipment", value: 11.8, color: "#6B8F1A" },
-  { name: "Fan-Coil Units", value: 8.1, color: "#B0D62E" },
-  { name: "Hot Water Boilers", value: 8.4, color: "#4a6010" },
-  { name: "External Lights", value: 7.4, color: "#D4E8A0" },
-  { name: "Other Internal", value: 5.1, color: "#2A4210" },
-  { name: "Exhaust Fans", value: 1.6, color: "#1C2E0A" },
-  { name: "External Consumption", value: 0.1, color: "#0A1203" },
+  { name: "Chillers 57.5%", value: 57.5, color: "#94C120" },
+  { name: "Other Equipment 11.8%", value: 11.8, color: "#6B8F1A" },
+  { name: "Hot Water Boilers 8.4%", value: 8.4, color: "#B0D62E" },
+  { name: "Fan-Coil Units 8.1%", value: 8.1, color: "#4a7010" },
+  { name: "External Lights 7.4%", value: 7.4, color: "#D4E8A0" },
+  { name: "Other Internal 5.1%", value: 5.1, color: "#365c10" },
+  { name: "Exhaust Fans 1.6%", value: 1.6, color: "#2A4210" },
+  { name: "External Consumption 0.1%", value: 0.1, color: "#1C2E0A" },
 ];
 
 export function Energy() {
-  const [bill, setBill] = useState(15000);
-  const annual = bill * 12;
+  const [bill, setBill] = useState<number | "">("");
+  const billNum = typeof bill === "number" ? bill : 0;
+  const annual = billNum * 12;
   const low = Math.round(annual * 0.25);
   const high = Math.round(annual * 0.4);
+  const [chartH, setChartH] = useState(380);
+  useEffect(() => {
+    const calc = () => {
+      const w = window.innerWidth;
+      setChartH(w < 640 ? 260 : w < 1024 ? 320 : 380);
+    };
+    calc();
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
 
   return (
     <section id="energy" className="relative px-6 py-24" style={{ background: "var(--pp-section-alt)" }}>
@@ -74,7 +85,7 @@ export function Energy() {
           ))}
         </div>
 
-        {/* Pie chart */}
+        {/* Pie chart — full width, standalone */}
         <Reveal>
           <div className="mt-16">
             <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
@@ -86,7 +97,7 @@ export function Energy() {
               }}
             >
               <div className="dark:bg-white/[0.03] rounded-2xl p-4">
-                <ResponsiveContainer width="100%" height={360}>
+                <ResponsiveContainer width="100%" height={chartH}>
                   <PieChart>
                     <Pie
                       data={ENERGY_DATA}
@@ -94,8 +105,8 @@ export function Energy() {
                       nameKey="name"
                       cx="50%"
                       cy="50%"
-                      innerRadius={70}
-                      outerRadius={130}
+                      innerRadius="45%"
+                      outerRadius="75%"
                       paddingAngle={1}
                     >
                       {ENERGY_DATA.map((d) => (
@@ -112,7 +123,7 @@ export function Energy() {
                       formatter={(v) => `${v}%`}
                     />
                     <Legend
-                      wrapperStyle={{ fontSize: 12 }}
+                      wrapperStyle={{ fontSize: 12, paddingTop: 8 }}
                       formatter={(v, entry) => {
                         const c = (entry?.color || "#94C120") as string;
                         const safe = c === "#0A1203" || c === "#1C2E0A" ? "#2A4210" : c;
@@ -134,38 +145,52 @@ export function Energy() {
           </div>
         </Reveal>
 
-        {/* Calculator */}
-        <div className="mt-14 grid items-center gap-8 lg:grid-cols-2">
+        {/* Calculator — centered, max-width 600px */}
+        <div className="mt-14 flex justify-center">
           <Reveal>
-            <div className="overflow-hidden rounded-3xl">
-              <img src={IMG.energyAudit} alt="Energy audit walkthrough" className="h-full w-full object-cover" />
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="rounded-3xl p-8" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
+            <div className="w-full max-w-[600px] rounded-3xl p-8" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
               <div className="flex items-center gap-3">
                 <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
                 <h3 className="text-xl font-bold">Estimate Your Energy Savings</h3>
               </div>
-              <p className="mt-2 text-sm" style={{ color: "var(--pp-text-muted)" }}>
-                My monthly electricity bill is AED <span className="font-bold" style={{ color: "#94C120" }}>{bill.toLocaleString()}</span>
-              </p>
-              <input
-                type="range"
-                min={2000}
-                max={200000}
-                step={500}
-                value={bill}
-                onChange={(e) => setBill(Number(e.target.value))}
-                className="mt-3 w-full accent-[#94C120]"
-              />
-              <div className="mt-6 rounded-2xl p-5" style={{ background: "var(--accent)" }}>
+              <label className="mt-4 block text-sm font-medium" style={{ color: "var(--pp-text)" }}>
+                What is your average monthly electricity bill?
+              </label>
+              <div
+                className="mt-2 flex items-center gap-2 rounded-xl px-4 py-3"
+                style={{ background: "var(--pp-input-bg)", border: "1px solid var(--pp-card-border)" }}
+              >
+                <span className="text-sm font-semibold" style={{ color: "#94C120" }}>AED</span>
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min={0}
+                  placeholder="15000"
+                  value={bill}
+                  onChange={(e) => setBill(e.target.value === "" ? "" : Number(e.target.value))}
+                  className="flex-1 bg-transparent text-lg font-medium outline-none"
+                  style={{ color: "var(--pp-text)" }}
+                />
+                <span className="text-sm" style={{ color: "var(--pp-text-muted)" }}>/month</span>
+              </div>
+              <div className="mt-6 rounded-2xl p-5 text-center" style={{ background: "var(--accent)" }}>
                 <div className="text-xs uppercase tracking-wider" style={{ color: "var(--pp-text-muted)" }}>
                   Estimated annual saving
                 </div>
-                <div className="mt-1 text-3xl font-bold" style={{ color: "#94C120" }}>
-                  AED {low.toLocaleString()} – AED {high.toLocaleString()}
-                </div>
+                {billNum > 0 ? (
+                  <>
+                    <div className="mt-1 text-3xl font-bold" style={{ color: "#94C120" }}>
+                      AED {low.toLocaleString()} – AED {high.toLocaleString()}
+                    </div>
+                    <div className="mt-1 text-xs" style={{ color: "var(--pp-text-muted)" }}>
+                      Based on 25–40% average energy reduction
+                    </div>
+                  </>
+                ) : (
+                  <div className="mt-2 text-sm" style={{ color: "var(--pp-text-muted)" }}>
+                    Enter your monthly bill to see your savings
+                  </div>
+                )}
               </div>
               <a
                 href="#contact"

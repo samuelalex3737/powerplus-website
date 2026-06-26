@@ -15,7 +15,10 @@ export function Contact() {
       name: String(fd.get("name") || ""),
       company: String(fd.get("company") || ""),
       email: String(fd.get("email") || ""),
-      phone: String(fd.get("phone") || ""),
+      phone: (() => {
+        const v = String(fd.get("phone") || "").trim();
+        return v ? `+971 ${v}` : "";
+      })(),
       subject: String(fd.get("subject") || ""),
       message: String(fd.get("message") || ""),
     };
@@ -57,7 +60,7 @@ export function Contact() {
                 <Field label="Full Name" name="name" required />
                 <Field label="Company Name" name="company" />
                 <Field label="Email Address" name="email" type="email" required />
-                <Field label="Phone Number" name="phone" type="tel" defaultValue="+971 " />
+                <PhoneField />
               </div>
               <div className="mt-4">
                 <label htmlFor="subject" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>Subject</label>
@@ -202,6 +205,40 @@ function Field({
           color: "#E8F5CC",
         }}
       />
+    </div>
+  );
+}
+
+function PhoneField() {
+  return (
+    <div>
+      <label htmlFor="phone" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>
+        Phone Number
+      </label>
+      <div
+        className="mt-1.5 flex items-center rounded-xl"
+        style={{
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(148,193,32,0.25)",
+        }}
+      >
+        <span
+          className="select-none px-3 py-3 text-sm font-semibold"
+          style={{ color: "#94C120", borderRight: "1px solid rgba(148,193,32,0.25)" }}
+        >
+          +971
+        </span>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          placeholder="50 230 6745"
+          maxLength={20}
+          className="flex-1 bg-transparent px-3 py-3 text-sm outline-none"
+          style={{ color: "#E8F5CC" }}
+        />
+      </div>
     </div>
   );
 }
