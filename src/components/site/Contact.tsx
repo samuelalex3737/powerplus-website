@@ -57,7 +57,7 @@ export function Contact() {
                 <Field label="Full Name" name="name" required />
                 <Field label="Company Name" name="company" />
                 <Field label="Email Address" name="email" type="email" required />
-                <Field label="Phone Number" name="phone" type="tel" defaultValue="+971 " />
+                <PhoneField />
               </div>
               <div className="mt-4">
                 <label htmlFor="subject" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>Subject</label>
