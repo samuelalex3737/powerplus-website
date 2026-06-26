@@ -65,7 +65,14 @@ export function Services() {
                     {s.badge}
                   </span>
                 )}
-                <s.icon className="h-9 w-9" style={{ color: s.featured ? "#ffffff" : "#94C120" }} />
+                <span
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full"
+                  style={{
+                    background: s.featured ? "rgba(255,255,255,0.2)" : "var(--accent)",
+                  }}
+                >
+                  <s.icon className="h-6 w-6" style={{ color: s.featured ? "#ffffff" : "#94C120" }} />
+                </span>
                 <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
                 <p
                   className={`mt-3 flex-1 text-sm leading-relaxed ${
