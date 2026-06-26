@@ -205,3 +205,37 @@ function Field({
     </div>
   );
 }
+
+function PhoneField() {
+  return (
+    <div>
+      <label htmlFor="phone" className="text-sm font-medium" style={{ color: "#E8F5CC" }}>
+        Phone Number
+      </label>
+      <div
+        className="mt-1.5 flex items-center rounded-xl"
+        style={{
+          background: "rgba(255,255,255,0.06)",
+          border: "1px solid rgba(148,193,32,0.25)",
+        }}
+      >
+        <span
+          className="select-none px-3 py-3 text-sm font-semibold"
+          style={{ color: "#94C120", borderRight: "1px solid rgba(148,193,32,0.25)" }}
+        >
+          +971
+        </span>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          inputMode="tel"
+          placeholder="50 230 6745"
+          maxLength={20}
+          className="flex-1 bg-transparent px-3 py-3 text-sm outline-none"
+          style={{ color: "#E8F5CC" }}
+        />
+      </div>
+    </div>
+  );
+}
