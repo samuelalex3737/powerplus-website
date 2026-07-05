@@ -1,13 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import gsap from "gsap";
 import { LOGO_ICON } from "@/lib/images";
 import { ThemeToggle } from "./ThemeToggle";
+import { TopBar } from "./TopBar";
 
 const LINKS = [
   { label: "Home", href: "#home", id: "home" },
   { label: "Services", href: "#services", id: "services" },
   { label: "AI", href: "#ai", id: "ai" },
+  { label: "Vision AI", href: "#vision-ai", id: "vision-ai" },
   { label: "Generators", href: "#generators", id: "generators" },
   { label: "About", href: "#about", id: "about" },
   { label: "Contact", href: "#contact", id: "contact" },
@@ -16,8 +17,6 @@ const LINKS = [
 export function PillNav() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<string>("home");
-  const bubbleRefs = useRef<(HTMLSpanElement | null)[]>([]);
-  const tweenRefs = useRef<(gsap.core.Tween | null)[]>([]);
 
   useEffect(() => {
     const handler = () => setOpen(false);
@@ -41,33 +40,13 @@ export function PillNav() {
     return () => obs.disconnect();
   }, []);
 
-  const onEnter = (i: number) => {
-    const el = bubbleRefs.current[i];
-    if (!el) return;
-    tweenRefs.current[i]?.kill();
-    tweenRefs.current[i] = gsap.fromTo(
-      el,
-      { y: 28, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" },
-    );
-  };
-  const onLeave = (i: number) => {
-    const el = bubbleRefs.current[i];
-    if (!el) return;
-    tweenRefs.current[i]?.kill();
-    tweenRefs.current[i] = gsap.to(el, {
-      y: 28,
-      opacity: 0,
-      duration: 0.2,
-      ease: "power2.in",
-      overwrite: "auto",
-    });
-  };
 
   return (
     <>
-      <header className="fixed inset-x-0 top-4 z-50 px-4">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
+      <header className="fixed inset-x-0 top-0 z-50 w-full">
+        <TopBar />
+        <div className="px-4 pt-4">
+          <div className="mx-auto flex max-w-5xl items-center justify-between gap-3">
           <a
             href="#home"
             className="flex h-12 w-12 items-center justify-center rounded-full bg-background shadow-lg ring-1 ring-border overflow-hidden"
@@ -77,39 +56,30 @@ export function PillNav() {
           </a>
 
           <nav className="hidden md:flex h-12 items-center gap-1 rounded-full bg-background/90 px-2 shadow-lg ring-1 ring-border backdrop-blur">
-            {LINKS.map((l, i) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onMouseEnter={() => onEnter(i)}
-                onMouseLeave={() => onLeave(i)}
-                className="relative rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-white"
-              >
-                <span
-                  ref={(el) => {
-                    bubbleRefs.current[i] = el;
-                  }}
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 -z-10 rounded-full opacity-0"
-                  style={{ background: "#94C120" }}
-                />
-                <span className="relative">{l.label}</span>
-                {active === l.id && (
-                  <span
-                    aria-hidden
-                    className="absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full"
-                    style={{ bottom: -8, background: "#94C120" }}
-                  />
-                )}
-              </a>
-            ))}
+            {LINKS.map((l) => {
+              const isActive = active === l.id;
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className={`flex h-[38px] items-center justify-center rounded-full px-4 text-[15px] font-medium transition-all duration-200 ${
+                    isActive
+                      ? "bg-[#94C120] text-white shadow-sm"
+                      : "text-foreground/70 hover:bg-[#94C120]/10 hover:text-[#94C120] dark:hover:bg-[#94C120]/20"
+                  }`}
+                >
+                  <span className="relative translate-y-[1px]">{l.label}</span>
+                </a>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
             <button
               onClick={() => setOpen((v) => !v)}
-              className="md:hidden flex h-12 w-12 items-center justify-center rounded-full bg-background shadow-lg ring-1 ring-border"
+              className="md:hidden flex h-12 w-12 items-center justify-center rounded-full shadow-lg"
+              style={{ background: "#94C120", color: "#FFFFFF" }}
               aria-label="Toggle menu"
               aria-expanded={open}
             >
@@ -126,7 +96,12 @@ export function PillNav() {
                   <a
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-2xl px-4 py-3 text-base font-medium text-foreground hover:bg-accent"
+                    className="flex min-h-[52px] items-center rounded-2xl px-4 py-3 text-base font-medium transition-colors"
+                    style={
+                      active === l.id 
+                        ? { background: "#94C120", color: "#FFFFFF" } 
+                        : { color: "var(--foreground)" }
+                    }
                   >
                     {l.label}
                   </a>
@@ -135,8 +110,9 @@ export function PillNav() {
             </ul>
           </div>
         )}
+        </div>
       </header>
-      <div className="h-20" aria-hidden />
+      <div className="h-[96px] md:h-[120px]" aria-hidden />
     </>
   );
 }

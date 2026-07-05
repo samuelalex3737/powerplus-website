@@ -1,16 +1,16 @@
-import logoFullAsset from "@/assets/logo-full-new.asset.json";
-import logoIconAsset from "@/assets/logo-icon-new.asset.json";
-import josephAsset from "@/assets/joseph.asset.json";
+import logoFullAsset from "@/assets/logo-full.png";
+import logoIconAsset from "@/assets/logo-icon.png";
+import josephAsset from "@/assets/joseph.png";
 
-export const LOGO_FULL = logoFullAsset.url;
-export const LOGO_ICON = logoIconAsset.url;
-export const JOSEPH_PHOTO = josephAsset.url;
+export const LOGO_FULL = logoFullAsset;
+export const LOGO_ICON = logoIconAsset;
+export const JOSEPH_PHOTO = josephAsset;
 
 const px = (id: string, w = 1200) =>
   `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const IMG = {
-  heroSkyline: px("1534411", 1920),
+  heroSkyline: "https://images.pexels.com/photos/2800832/pexels-photo-2800832.jpeg?auto=compress&cs=tinysrgb&w=1920",
   servicesEnergy: px("1170412", 900),
   servicesAI: px("430208", 900),
   servicesGenerators: px("236089", 900),

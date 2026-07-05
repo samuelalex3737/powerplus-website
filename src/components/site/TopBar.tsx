@@ -4,7 +4,7 @@ import { COMPANY } from "@/lib/constants";
 export function TopBar() {
   return (
     <div
-      className="hidden md:block border-b"
+      className="hidden lg:block border-b"
       style={{
         background: "var(--pp-section-alt)",
         borderColor: "var(--border)",

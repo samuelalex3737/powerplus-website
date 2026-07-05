@@ -12,7 +12,7 @@ const FACTS = [
 
 const VALUES = [
   { title: "Zero Capex", body: "Clients pay nothing upfront. All costs are recovered from the savings the project generates." },
-  { title: "Vendor Agnostic", body: "We recommend what's right for your building — not what benefits our margins. Best solution always wins." },
+  { title: "Vendor Agnostic", body: "We recommend what's right for your building  -  not what benefits our margins. Best solution always wins." },
   { title: "End-to-End", body: "From audit and design through to installation, commissioning, monitoring, and ongoing support." },
 ];
 
@@ -33,14 +33,13 @@ export function About() {
         <div className="mt-14 grid gap-10 lg:grid-cols-[340px_1fr] lg:gap-14">
           <Reveal>
             <div
-              className="rounded-2xl p-5 shadow-lg"
+              className="max-w-[280px] md:max-w-none mx-auto md:mx-0 rounded-2xl p-5 shadow-lg"
               style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}
             >
               <img
                 src={JOSEPH_PHOTO}
                 alt="Joseph Alex, Director, Power Plus LLC"
-                className="w-full rounded-2xl object-cover"
-                style={{ aspectRatio: "4/5" }}
+                className="w-full max-h-[240px] md:max-h-[380px] object-cover object-top rounded-2xl"
               />
               <div className="mt-4">
                 <div className="text-lg font-bold">{COMPANY.director}</div>
@@ -48,9 +47,9 @@ export function About() {
                   {COMPANY.title}, {COMPANY.legalName}
                 </div>
               </div>
-              <ul className="mt-4 space-y-2 text-sm">
+              <ul className="mt-4 space-y-2 text-sm text-[var(--pp-text-subtle)]">
                 <li className="flex items-center gap-2"><Phone className="h-4 w-4" style={{ color: "#94C120" }} /><a href={`tel:${COMPANY.phoneRaw}`} className="hover:underline">{COMPANY.phone}</a></li>
-                <li className="flex items-center gap-2"><Mail className="h-4 w-4" style={{ color: "#94C120" }} /><a href={`mailto:${COMPANY.emailJoseph}`} className="hover:underline break-all">{COMPANY.emailJoseph}</a></li>
+                <li className="flex items-center gap-2"><Mail className="h-4 w-4" style={{ color: "#94C120" }} /><a href={`mailto:${COMPANY.emailAlt}`} className="hover:underline break-all">{COMPANY.emailAlt}</a></li>
                 <li className="flex items-center gap-2"><MapPin className="h-4 w-4" style={{ color: "#94C120" }} />Shams Free Zone, Sharjah, UAE</li>
               </ul>
               <a
@@ -70,41 +69,40 @@ export function About() {
               <h3 className="text-2xl font-bold sm:text-3xl">Built on Expertise. Driven by Results.</h3>
               <div className="mt-5 space-y-4 text-base leading-relaxed" style={{ color: "var(--pp-text)" }}>
                 <p>Joseph Alex is the Director of Power Plus LLC. With hands-on experience spanning energy efficiency consulting, renewable energy implementation, diesel generator supply, and AI-powered building technology, Joseph brings a practical, results-first approach to every project.</p>
-                <p>More recently, Joseph co-led the development and deployment of an AI building access control system — a software solution that connects to existing CCTV cameras to enable licence plate recognition and facial recognition for parking and lift access, removing the need for expensive dedicated ANPR hardware.</p>
+                <p>More recently, Joseph co-led the development and deployment of an AI building access control system  -  a software solution that connects to existing CCTV cameras to enable licence plate recognition and facial recognition for parking and lift access, removing the need for expensive dedicated ANPR hardware.</p>
                 <p>Power Plus operates from Shams Free Zone, Sharjah, and serves commercial and industrial clients across the UAE.</p>
               </div>
             </div>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-5">
           {FACTS.map((f) => (
             <div
               key={f.label}
-              className="flex items-start gap-3 rounded-2xl p-5"
+              className="p-3 md:p-4 rounded-lg text-center flex flex-col items-center gap-2"
               style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}
             >
-              <f.icon className="mt-0.5 h-5 w-5 flex-none" style={{ color: "#94C120" }} />
-              <span className="text-sm font-semibold" style={{ color: "var(--pp-text)" }}>{f.label}</span>
+              <f.icon className="h-5 w-5 flex-none mx-auto" style={{ color: "#94C120" }} />
+              <span className="text-[0.7rem] md:text-[0.875rem]" style={{ color: "var(--pp-text)" }}>{f.label}</span>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-10">
           {VALUES.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl p-6"
+              className="p-4 rounded-lg border-l-4 border-[#94C120]"
               style={{
                 background: "var(--card)",
-                borderLeft: "4px solid #94C120",
-                border: "1px solid var(--pp-card-border)",
-                borderLeftWidth: "4px",
-                borderLeftColor: "#94C120",
+                borderRight: "1px solid var(--pp-card-border)",
+                borderTop: "1px solid var(--pp-card-border)",
+                borderBottom: "1px solid var(--pp-card-border)",
               }}
             >
-              <h4 className="text-lg font-bold" style={{ color: "#94C120" }}>{v.title}</h4>
-              <p className="mt-2 text-sm" style={{ color: "var(--pp-text-muted)" }}>{v.body}</p>
+              <h4 className="text-[0.875rem] font-semibold text-[#94C120] mb-1">{v.title}</h4>
+              <p className="text-[0.75rem] leading-relaxed" style={{ color: "var(--pp-text-muted)" }}>{v.body}</p>
             </div>
           ))}
         </div>

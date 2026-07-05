@@ -5,7 +5,7 @@ const SERVICES = [
   {
     icon: Zap,
     title: "Energy Efficiency Solutions",
-    body: "Turnkey energy and water efficiency upgrades for commercial and industrial buildings. LED lighting, solar PV, HVAC, monitoring — all with zero upfront capital cost. You pay nothing until the savings arrive.",
+    body: "Turnkey energy and water efficiency upgrades for commercial and industrial buildings. LED lighting, solar PV, HVAC, monitoring  -  all with zero upfront capital cost. You pay nothing until the savings arrive.",
     tags: ["LED", "Solar PV", "HVAC", "Monitoring"],
     href: "#energy",
     featured: false,
@@ -13,7 +13,7 @@ const SERVICES = [
   {
     icon: ShieldCheck,
     title: "AI Building Access Control",
-    body: "Your existing cameras become an intelligent access system. Licence plate and facial recognition — no expensive new hardware, no disruption to your building operations.",
+    body: "Your existing cameras become an intelligent access system. Licence plate and facial recognition  -  no expensive new hardware, no disruption to your building operations.",
     tags: ["Facial Recognition", "ANPR", "Barrier", "Lift Access"],
     href: "#ai",
     featured: true,
@@ -22,7 +22,7 @@ const SERVICES = [
   {
     icon: Power,
     title: "Diesel Generator Sales",
-    body: "Cummins and Perkins — the UAE's two most trusted generator brands. Full kVA range, genuine spare parts, delivered across the Emirates.",
+    body: "Cummins and Perkins  -  the UAE's two most trusted generator brands. Full kVA range, genuine spare parts, delivered across the Emirates.",
     tags: ["Cummins", "Perkins", "Spare Parts", "UAE-Wide"],
     href: "#generators",
     featured: false,
@@ -31,8 +31,13 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="services" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="services" className="pb-24 pt-0 w-full overflow-hidden">
+      <div className="hero-to-services-fade w-full" style={{
+        height: '30px',
+        background: 'linear-gradient(to bottom, #1C2E0A 0%, var(--background) 100%)',
+        marginBottom: '0'
+      }} />
+      <div className="mx-auto max-w-6xl mt-6 md:mt-24 px-6">
         <Reveal>
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "#94C120" }}>
@@ -42,18 +47,18 @@ export function Services() {
               Three Pillars of Power Plus
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
-              From cutting your energy bills to securing your building with AI —
+              From cutting your energy bills to securing your building with AI  - 
               we deliver results with zero upfront cost to you.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-12">
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.12}>
               <a
                 href={s.href}
-                className="group relative flex h-full flex-col rounded-3xl border-t-4 p-7 shadow-sm transition hover:-translate-y-1.5 hover:shadow-2xl"
+                className="group relative flex h-full flex-col rounded-3xl border-t-4 p-4 md:p-6 shadow-sm transition hover:-translate-y-1.5 hover:shadow-2xl"
                 style={{
                   borderTopColor: "#94C120",
                   background: s.featured ? "#94C120" : "var(--card)",
@@ -73,23 +78,24 @@ export function Services() {
                 >
                   <s.icon className="h-6 w-6" style={{ color: s.featured ? "#ffffff" : "#94C120" }} />
                 </span>
-                <h3 className="mt-5 text-xl font-bold">{s.title}</h3>
+                <h3 className="mt-5 text-[0.9375rem] md:text-base font-semibold mb-2">{s.title}</h3>
                 <p
-                  className={`mt-3 flex-1 text-sm leading-relaxed ${
+                  className={`mt-3 flex-1 text-[0.8rem] md:text-sm leading-relaxed ${
                     s.featured ? "" : "text-muted-foreground"
                   }`}
                   style={s.featured ? { color: "rgba(255,255,255,0.92)" } : undefined}
                 >
                   {s.body}
                 </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
+                <div className="tags mt-4 flex flex-wrap gap-[6px]">
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full px-2.5 py-0.5 text-[11px] font-medium"
+                      className="tag-pill rounded-full px-[10px] py-[2px] text-[12px] font-medium"
                       style={{
                         background: s.featured ? "rgba(255,255,255,0.18)" : "var(--accent)",
-                        color: s.featured ? "#ffffff" : "var(--pp-text-muted)",
+                        color: s.featured ? "#ffffff" : "var(--pp-text-subtle)",
+                        border: s.featured ? "1px solid rgba(255,255,255,0.3)" : "1px solid var(--border)",
                       }}
                     >
                       {t}

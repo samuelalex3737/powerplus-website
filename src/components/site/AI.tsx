@@ -1,5 +1,7 @@
+import { Building2, Briefcase, ParkingSquare, LayoutGrid } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "./Reveal";
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon";
 import { IMG } from "@/lib/images";
 import { COMPANY } from "@/lib/constants";
 
@@ -27,10 +29,10 @@ const STEPS = [
 ];
 
 const USE_CASES = [
-  { emoji: "🏢", title: "Residential buildings", body: "Resident vehicle + visitor management" },
-  { emoji: "🏗", title: "Commercial offices", body: "Employee facial recognition entry" },
-  { emoji: "🅿", title: "Parking facilities", body: "Automated multi-barrier management" },
-  { emoji: "🏙", title: "Mixed-use developments", body: "Vehicle and pedestrian in one system" },
+  { icon: Building2, title: "Residential buildings", body: "Resident vehicle + visitor management" },
+  { icon: Briefcase, title: "Commercial offices", body: "Employee facial recognition entry" },
+  { icon: ParkingSquare, title: "Parking facilities", body: "Automated multi-barrier management" },
+  { icon: LayoutGrid, title: "Mixed-use developments", body: "Vehicle and pedestrian in one system" },
 ];
 
 function jumpToContact(subject?: string) {
@@ -113,15 +115,18 @@ export function AI() {
         </div>
 
         <div className="mt-16 grid gap-4 sm:grid-cols-2">
-          {USE_CASES.map((u, i) => (
-            <Reveal key={u.title} delay={i * 0.08}>
-              <div className="h-full rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(148,193,32,0.15)" }}>
-                <div className="text-2xl">{u.emoji}</div>
-                <h4 className="mt-2 font-bold text-white">{u.title}</h4>
-                <p className="mt-1 text-sm text-white/70">{u.body}</p>
-              </div>
-            </Reveal>
-          ))}
+          {USE_CASES.map((u, i) => {
+            const Icon = u.icon;
+            return (
+              <Reveal key={u.title} delay={i * 0.08}>
+                <div className="h-full rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(148,193,32,0.15)" }}>
+                  <Icon className="h-6 w-6" style={{ color: "#94C120" }} />
+                  <h4 className="mt-4 font-bold text-white">{u.title}</h4>
+                  <p className="mt-1 text-sm text-white/70">{u.body}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
 
         <Reveal>
@@ -138,12 +143,13 @@ export function AI() {
         <Reveal>
           <div className="mt-12 text-center">
             <a
-              href="#contact"
-              onClick={jumpToContact("AI Access Control Demo")}
+              href={COMPANY.whatsappAI}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-bold text-white shadow-lg transition hover:scale-[1.02]"
               style={{ background: "#94C120" }}
             >
-              Enquire About AI Access Control
+              <WhatsappIcon className="h-4 w-4" /> Enquire About AI Access Control
             </a>
           </div>
         </Reveal>

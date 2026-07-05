@@ -1,4 +1,5 @@
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone } from "lucide-react";
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon";
 import { Reveal } from "./Reveal";
 import { IMG } from "@/lib/images";
 import { COMPANY } from "@/lib/constants";
@@ -20,7 +21,7 @@ export function CTABanner() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap tight-container">
             <a
               href={`tel:${COMPANY.phoneRaw}`}
               className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold text-white shadow-lg transition hover:scale-[1.02]"
@@ -29,12 +30,12 @@ export function CTABanner() {
               <Phone className="h-4 w-4" /> {COMPANY.phone}
             </a>
             <a
-              href={COMPANY.whatsappLink}
+              href={COMPANY.whatsappCTA}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-white/5 px-6 py-3.5 text-sm font-bold text-white backdrop-blur transition hover:bg-white/10"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp Us
+              <WhatsappIcon className="h-4 w-4" /> WhatsApp Us
             </a>
           </div>
         </Reveal>

@@ -7,12 +7,15 @@ import { Services } from "@/components/site/Services";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Energy } from "@/components/site/Energy";
 import { AI } from "@/components/site/AI";
+import { VisionAI } from "@/components/site/VisionAI";
 import { Generators } from "@/components/site/Generators";
 import { About } from "@/components/site/About";
 import { CTABanner } from "@/components/site/CTABanner";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { FloatingWhatsapp } from "@/components/site/FloatingWhatsapp";
+
+import { ScrollProgress } from "@/components/site/ScrollProgress";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [] }),
@@ -22,13 +25,14 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <TopBar />
+      <ScrollProgress />
       <PillNav />
       <Hero />
       <Services />
       <WhyUs />
       <Energy />
       <AI />
+      <VisionAI />
       <Generators />
       <About />
       <CTABanner />

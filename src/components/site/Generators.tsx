@@ -1,4 +1,5 @@
-import { Battery, Wrench, Truck, Phone, MessageCircle, Box } from "lucide-react";
+import { Battery, Wrench, Truck, Phone, Box } from "lucide-react";
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon";
 import { Reveal } from "./Reveal";
 import { IMG } from "@/lib/images";
 import { COMPANY } from "@/lib/constants";
@@ -16,7 +17,7 @@ const BRANDS = [
     name: "Perkins",
     badge: "Proven in the Gulf",
     range: "10 kVA – 2,000 kVA+",
-    body: "Perkins engines power 1 in 5 non-road vehicles worldwide. Proven performers in Middle Eastern climates — dependable, fuel-efficient, and field-tested in the region.",
+    body: "Perkins engines power 1 in 5 non-road vehicles worldwide. Proven performers in Middle Eastern climates  -  dependable, fuel-efficient, and field-tested in the region.",
     industries: ["Oil & Gas", "Telecom", "Manufacturing", "Commercial", "Agriculture", "Remote Sites"],
     img: IMG.generatorPerkins,
   },
@@ -48,7 +49,7 @@ export function Generators() {
               Heavy-Duty Diesel Generators
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
-              Cummins and Perkins — the UAE's two most trusted generator brands.
+              Cummins and Perkins  -  the UAE's two most trusted generator brands.
               Built for this climate. Backed by genuine parts.
             </p>
           </div>
@@ -60,23 +61,23 @@ export function Generators() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-12">
           {BRANDS.map((b, i) => (
             <Reveal key={b.name} delay={i * 0.1}>
-              <div className="flex h-full flex-col rounded-3xl p-7" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
+              <div className="flex h-full flex-col p-4 md:p-6 rounded-xl" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
                 <div className="flex items-baseline justify-between gap-2">
-                  <h3 className="text-2xl font-bold">{b.name}</h3>
+                  <h3 className="text-[1rem] md:text-[1.3rem] font-bold mb-2">{b.name}</h3>
                   <span className="rounded-full px-3 py-1 text-[11px] font-bold text-white" style={{ background: "#94C120" }}>{b.badge}</span>
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">{b.body}</p>
+                <p className="text-[0.78rem] md:text-[0.875rem] leading-relaxed mt-3 text-muted-foreground">{b.body}</p>
                 <div className="mt-4 text-sm">
                   <span className="font-semibold" style={{ color: "#94C120" }}>Range:</span> {b.range}
                 </div>
                 <div className="mt-3">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Industries</div>
+                  <div className="text-xs font-semibold uppercase tracking-wider text-[var(--pp-text-subtle)]">Industries</div>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {b.industries.map((ind) => (
-                      <span key={ind} className="rounded-full px-2.5 py-0.5 text-[11px]" style={{ background: "var(--accent)", color: "var(--pp-text-muted)" }}>{ind}</span>
+                      <span key={ind} className="rounded-full px-2.5 py-0.5 text-[11px]" style={{ background: "rgba(148, 193, 32, 0.1)", border: "1px solid rgba(148, 193, 32, 0.15)", color: "var(--pp-text-subtle)" }}>{ind}</span>
                     ))}
                   </div>
                 </div>
@@ -100,13 +101,13 @@ export function Generators() {
         </Reveal>
 
         <h3 className="mt-14 text-sm font-bold uppercase tracking-wider" style={{ color: "#94C120" }}>What We Supply</h3>
-        <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-4">
           {SUPPLY.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.08}>
-              <div className="h-full rounded-2xl p-5" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
-                <s.icon className="h-6 w-6" style={{ color: "#94C120" }} />
-                <div className="mt-3 text-sm font-bold">{s.title}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{s.body}</div>
+              <div className="h-full p-3 md:p-5 rounded-xl text-center" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
+                <s.icon className="h-6 w-6 mx-auto" style={{ color: "#94C120" }} />
+                <div className="text-[0.7rem] md:text-[0.875rem] font-medium mt-2">{s.title}</div>
+                <div className="text-[0.625rem] md:text-[0.75rem] opacity-60 mt-1">{s.body}</div>
               </div>
             </Reveal>
           ))}
@@ -119,7 +120,7 @@ export function Generators() {
             </div>
             <div className="flex-1">
               <div className="font-bold">Ancillary Equipment</div>
-              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
+              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm text-[var(--pp-text-subtle)]">
                 {ANCILLARY.map((a) => (
                   <span key={a} className="inline-flex items-center gap-1.5"><Box className="h-3 w-3" style={{ color: "#94C120" }} />{a}</span>
                 ))}
@@ -132,20 +133,20 @@ export function Generators() {
           <div className="mt-10 flex flex-col items-start gap-5 rounded-3xl p-8 text-white sm:flex-row sm:items-center sm:justify-between" style={{ background: "#94C120" }}>
             <div>
               <div className="text-lg font-bold sm:text-xl">
-                Need a generator quote? Tell us your kVA requirement, site location, and load type — we'll come back with the right unit.
+                Need a generator quote? Tell us your kVA requirement, site location, and load type  -  we'll come back with the right unit.
               </div>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-bold" style={{ color: "#94C120" }}>
+            <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full">
+              <a href="#contact" className="w-full sm:w-auto text-center justify-center text-[0.8125rem] py-3 px-5 whitespace-nowrap inline-flex items-center gap-2 rounded-full bg-white font-bold" style={{ color: "#94C120" }}>
                 Request a Generator Quote
               </a>
               <a
-                href={COMPANY.whatsappGenerator}
+                href={COMPANY.whatsappGen}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-5 py-3 text-sm font-bold text-white"
               >
-                <MessageCircle className="h-4 w-4" /> Quick Quote on WhatsApp
+                <WhatsappIcon className="h-4 w-4" /> Quick Quote on WhatsApp
               </a>
             </div>
           </div>

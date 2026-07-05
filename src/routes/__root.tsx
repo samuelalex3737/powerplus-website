@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Power Plus LLC — turnkey energy efficiency, AI building access control, and Cummins & Perkins diesel generator supply across UAE. Zero capex model. Shams Free Zone, Sharjah.",
+          "Power Plus LLC  -  turnkey energy efficiency, AI building access control, and Cummins & Perkins diesel generator supply across UAE. Zero capex model. Shams Free Zone, Sharjah.",
       },
       { name: "author", content: "Power Plus LLC" },
       { property: "og:title", content: "Power Plus LLC | Sharjah, UAE" },
@@ -103,8 +103,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: logoIconAsset.url },
-      { rel: "apple-touch-icon", href: logoIconAsset.url },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

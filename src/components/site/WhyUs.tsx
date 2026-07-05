@@ -4,7 +4,7 @@ import { IMG } from "@/lib/images";
 
 const ITEMS = [
   { icon: Award, title: "Leading in Industry", body: "We have the best experience of the industry, serving commercial and industrial clients across the Middle East with proven results." },
-  { icon: CheckCircle, title: "Quality Guaranteed", body: "Power Plus LLC is committed to delivering the best quality energy solutions — engineered precisely, installed reliably, monitored continuously." },
+  { icon: CheckCircle, title: "Quality Guaranteed", body: "Power Plus LLC is committed to delivering the best quality energy solutions  -  engineered precisely, installed reliably, monitored continuously." },
   { icon: Shield, title: "Reliable Services", body: "Our products and services meet the highest industry standards. Every project is backed by technical expertise and full post-installation support." },
   { icon: Users, title: "Experienced Team", body: "Our professional engineers and technicians have the hands-on expertise to deliver every project on specification and on time." },
 ];
@@ -25,7 +25,7 @@ export function WhyUs() {
         >
           Why Choose Power Plus LLC?
         </motion.h2>
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8 mt-14">
           {ITEMS.map((it, i) => (
             <motion.div
               key={it.title}
@@ -33,11 +33,15 @@ export function WhyUs() {
               whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.15, ease: "easeOut" }}
-              className="text-center sm:text-left"
+              className="flex flex-row md:flex-col items-start gap-3 md:gap-0 p-4 md:p-6 rounded-xl"
             >
-              <it.icon className="mx-auto h-9 w-9 sm:mx-0" style={{ color: "#94C120" }} />
-              <h3 className="mt-4 text-lg font-bold">{it.title}</h3>
-              <p className="mt-2 text-sm text-white/70 leading-relaxed">{it.body}</p>
+              <div className="w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] rounded-xl flex items-center justify-center mb-0 md:mb-4 flex-shrink-0">
+                <it.icon className="w-[18px] h-[18px] md:w-6 md:h-6" style={{ color: "#94C120" }} />
+              </div>
+              <div>
+                <h3 className="text-[0.875rem] md:text-base font-semibold mb-1 md:mb-2 text-left">{it.title}</h3>
+                <p className="text-[0.75rem] md:text-sm leading-relaxed text-left opacity-80">{it.body}</p>
+              </div>
             </motion.div>
           ))}
         </div>

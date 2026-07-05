@@ -1,4 +1,5 @@
-import { MessageCircle, ChevronUp } from "lucide-react";
+import { ChevronUp } from "lucide-react";
+import { WhatsappIcon } from "@/components/ui/whatsapp-icon";
 import { useEffect, useState } from "react";
 import { COMPANY } from "@/lib/constants";
 
@@ -8,7 +9,7 @@ export function FloatingWhatsapp() {
   useEffect(() => {
     const onScroll = () => {
       setShow(window.scrollY > 300);
-      setTop(window.scrollY > 500);
+      setTop(window.scrollY > 600);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -20,12 +21,16 @@ export function FloatingWhatsapp() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
-          className="fixed right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-xl transition hover:scale-105"
+          className="back-to-top fixed right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full shadow-xl transition hover:scale-105"
           style={{
             bottom: "6rem",
             background: "var(--background)",
             border: "1px solid #94C120",
             color: "#94C120",
+            padding: 0,
+            aspectRatio: "1 / 1",
+            minWidth: "2.75rem",
+            minHeight: "2.75rem"
           }}
         >
           <ChevronUp className="h-5 w-5" />
@@ -47,7 +52,7 @@ export function FloatingWhatsapp() {
               style={{ background: "#94C120" }}
             />
             <span className="relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-2xl" style={{ background: "#94C120" }}>
-              <MessageCircle className="h-7 w-7" />
+              <WhatsappIcon className="h-7 w-7" style={{ color: "white" }} />
             </span>
           </span>
         </a>

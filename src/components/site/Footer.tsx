@@ -24,36 +24,38 @@ export function Footer() {
   const greenFilter =
     "brightness(0) saturate(100%) invert(67%) sepia(40%) saturate(600%) hue-rotate(42deg) brightness(95%)";
   return (
-    <footer className="px-6 pt-16 pb-6" style={{ background: "#0A1203", color: "#A8C870" }}>
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="p-9 md:p-16" style={{ background: "#0A1203", color: "#A8C870" }}>
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-[2fr_1.5fr_1fr_1.5fr] gap-6 lg:gap-12">
         <div>
           <img
             src={LOGO_FULL}
-            alt="Power Plus LLC — Powering Smart Decisions, Fueling Future Solutions"
-            className="h-14 w-auto"
-            style={{ filter: greenFilter }}
+            alt="Power Plus LLC  -  Powering Smart Decisions, Fueling Future Solutions"
+            className="max-w-[160px] md:max-w-[220px] h-auto mb-3"
+            style={{ width: "100%", filter: greenFilter }}
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed">
             We are a technology, engineering and finance company that uses vendor agnostic engineering to deliver comprehensive energy efficiency and technology upgrades to optimize building energy use.
           </p>
         </div>
-        <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-white">Our Solutions</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            {SOLUTIONS.map((s) => (
-              <li key={s}>
-                <a href="#energy" className="transition hover:text-[#94C120]">{s}</a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-bold uppercase tracking-wider text-white">Quick Links</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            {LINKS.map((l) => (
-              <li key={l.label}><a href={l.href} className="transition hover:text-[#94C120]">{l.label}</a></li>
-            ))}
-          </ul>
+        <div className="grid grid-cols-2 lg:grid-cols-1 lg:contents gap-5">
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">Our Solutions</h4>
+            <ul className="mt-4 space-y-2 text-sm">
+              {SOLUTIONS.map((s) => (
+                <li key={s}>
+                  <a href="#energy" className="block text-[0.75rem] md:text-[0.85rem] py-1 transition hover:text-[#94C120]">{s}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-white">Quick Links</h4>
+            <ul className="mt-4 space-y-2 text-sm">
+              {LINKS.map((l) => (
+                <li key={l.label}><a href={l.href} className="block text-[0.75rem] md:text-[0.85rem] py-1 transition hover:text-[#94C120]">{l.label}</a></li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div>
           <h4 className="text-sm font-bold uppercase tracking-wider text-white">Our Office</h4>
