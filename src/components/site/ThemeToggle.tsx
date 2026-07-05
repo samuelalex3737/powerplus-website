@@ -6,9 +6,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const saved = localStorage.getItem("pp-theme");
-    const prefersDark =
-      saved === "dark" ||
-      (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const prefersDark = saved === "dark";
     setDark(prefersDark);
     document.documentElement.classList.toggle("dark", prefersDark);
   }, []);
