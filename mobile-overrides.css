@@ -1254,4 +1254,64 @@
     justify-content: center !important;
     z-index: 49 !important;
   }
+
+  /* Global overflow fix */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  /* Every section must be constrained */
+  section, header, footer, div {
+    max-width: 100% !important;
+  }
+
+  /* Carousel track is a common overflow culprit */
+  .carousel-track,
+  [class*="carousel"] {
+    max-width: 100vw !important;
+  }
+
+  /* Carousel wrapper negative margin fix */
+  .carousel-wrapper {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Calculator card — must not overflow */
+  .calculator-card,
+  [class*="calculator"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 16px !important;
+  }
+
+  /* Input wrapper inside calculator */
+  .calculator-input-wrapper {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Result display */
+  .calculator-result {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Result number — reduce font size on mobile */
+  .calculator-result-number {
+    font-size: 1.4rem !important;
+    word-break: break-word !important;
+  }
+
+  /* Button — full width */
+  .calculator-card button,
+  .calculator-cta-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 }

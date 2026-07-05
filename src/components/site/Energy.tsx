@@ -325,11 +325,12 @@ export function Energy() {
 
           {/* Track and Arrows */}
           <div className="relative mt-2">
-            <button
-              onClick={() => selectPrevNext('prev')}
-              aria-label="Previous service"
-              className="hidden md:flex carousel-arrow absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-1/2 z-10 w-8 h-8 md:w-9 md:h-9 rounded-full items-center justify-center bg-white dark:bg-[#1C2E0A] border border-[#94C120]/40 shadow-md hover:border-[#94C120] hover:text-[#94C120] transition-all duration-150 text-[var(--pp-text-subtle)]"
-            >
+              <button
+                onClick={() => selectPrevNext('prev')}
+                aria-label="Previous service"
+                className="flex carousel-arrow absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full items-center justify-center bg-white dark:bg-[#1C2E0A] border border-[#94C120]/40 shadow-md hover:border-[#94C120] hover:text-[#94C120] transition-all duration-150 text-[var(--pp-text-subtle)]"
+                style={{ top: '40%' }}
+              >
               <ChevronLeft className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </button>
 
@@ -372,11 +373,12 @@ export function Energy() {
               <div className="hidden md:block flex-none w-[calc(33.333%-10px)]" aria-hidden />
             </div>
 
-            <button
-              onClick={() => selectPrevNext('next')}
-              aria-label="Next service"
-              className="hidden md:flex carousel-arrow absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-1/2 z-10 w-8 h-8 md:w-9 md:h-9 rounded-full items-center justify-center bg-white dark:bg-[#1C2E0A] border border-[#94C120]/40 shadow-md hover:border-[#94C120] hover:text-[#94C120] transition-all duration-150 text-[var(--pp-text-subtle)]"
-            >
+              <button
+                onClick={() => selectPrevNext('next')}
+                aria-label="Next service"
+                className="flex carousel-arrow absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 md:w-9 md:h-9 rounded-full items-center justify-center bg-white dark:bg-[#1C2E0A] border border-[#94C120]/40 shadow-md hover:border-[#94C120] hover:text-[#94C120] transition-all duration-150 text-[var(--pp-text-subtle)]"
+                style={{ top: '40%' }}
+              >
               <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </button>
           </div>

@@ -4,6 +4,39 @@
 
 @custom-variant dark (&:is(.dark *));
 
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+/* Override browser autofill background on ALL inputs globally */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* This forces the autofill background to be transparent/dark */
+  -webkit-box-shadow: 0 0 0 1000px rgba(30, 45, 10, 0.95) inset !important;
+  box-shadow: 0 0 0 1000px rgba(30, 45, 10, 0.95) inset !important;
+  -webkit-text-fill-color: #E8F5CC !important;
+  caret-color: #E8F5CC !important;
+  border-color: rgba(148, 193, 32, 0.4) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Light mode autofill */
+[data-theme="light"] input:-webkit-autofill,
+[data-theme="light"] input:-webkit-autofill:hover,
+[data-theme="light"] input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #1A1A1A !important;
+  caret-color: #1A1A1A !important;
+}
 /* ====================================================================
  * Power Plus LLC — Brand tokens
  * ==================================================================== */
