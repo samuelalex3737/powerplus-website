@@ -124,7 +124,7 @@ export function Contact() {
                   fontSize: '0.875rem',
                   marginTop: '12px'
                 }}>
-                  Something went wrong. Please try WhatsApp instead —
+                  Something went wrong. Please try WhatsApp instead -
                   Joseph is available on +971 50 230 6745.
                 </div>
               )}
