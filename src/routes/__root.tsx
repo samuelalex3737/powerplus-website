@@ -136,9 +136,7 @@ function RootShell({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="overflow-x-hidden">
-        <div style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
-          {children}
-        </div>
+        {children}
         <Scripts />
       </body>
     </html>
