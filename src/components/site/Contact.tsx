@@ -68,7 +68,7 @@ export function Contact() {
                   name="subject"
                   required
                   defaultValue={COMPANY.subjects[0]}
-                  className="w-full px-4 py-[14px] rounded-xl text-[16px] focus:outline-none focus:ring-2"
+                  className="w-full min-w-0 box-border px-4 py-[14px] rounded-xl text-[16px] focus:outline-none focus:ring-2"
                   style={{
                     background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(148,193,32,0.25)",
@@ -89,7 +89,7 @@ export function Contact() {
                   required
                   rows={5}
                   maxLength={4000}
-                  className="w-full px-4 py-[14px] rounded-xl text-[16px] min-h-[110px] resize-none focus:outline-none focus:ring-2"
+                  className="w-full min-w-0 box-border px-4 py-[14px] rounded-xl text-[16px] min-h-[140px] resize-y focus:outline-none focus:ring-2"
                   style={{
                     background: "rgba(255,255,255,0.06)",
                     border: "1px solid rgba(148,193,32,0.25)",
@@ -234,7 +234,7 @@ function Field({
         placeholder={placeholder}
         defaultValue={defaultValue}
         maxLength={255}
-        className="w-full px-4 py-[14px] rounded-xl text-[16px] focus:outline-none focus:ring-2"
+        className="w-full min-w-0 box-border px-4 py-[14px] rounded-xl text-[16px] focus:outline-none focus:ring-2"
         style={{
           background: "rgba(255,255,255,0.06)",
           border: "1px solid rgba(148,193,32,0.25)",
@@ -272,7 +272,7 @@ function PhoneField() {
           inputMode="tel"
           placeholder="50 230 6745"
           maxLength={20}
-          className="flex-1 bg-transparent px-3 py-3 text-[16px] outline-none"
+          className="w-full min-w-0 box-border flex-1 bg-transparent px-4 py-3 text-[16px] focus:outline-none"
           style={{ color: "#E8F5CC", fontSize: '16px' }}
         />
       </div>

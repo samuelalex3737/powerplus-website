@@ -653,7 +653,7 @@ export function Energy() {
                   placeholder="15000"
                   value={bill}
                   onChange={(e) => setBill(e.target.value === "" ? "" : Number(e.target.value))}
-                  className="flex-1 bg-transparent text-lg font-medium outline-none"
+                  className="flex-1 min-w-0 w-full bg-transparent text-lg font-medium outline-none"
                   style={{ color: "var(--pp-text)" }}
                 />
                 <span className="text-sm" style={{ color: "var(--pp-text-subtle)" }}>/month</span>
