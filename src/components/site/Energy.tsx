@@ -303,7 +303,7 @@ export function Energy() {
           </div>
         </Reveal>
 
-        <div className="-mx-[18px] md:mx-0 px-[18px] md:px-0 mt-12">
+        <div className="w-full box-border overflow-hidden mt-12">
           {/* Progress bar */}
           <div style={{
             height: 2,

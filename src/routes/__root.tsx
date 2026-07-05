@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import mobileOverridesCss from "../../mobile-overrides.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import logoIconAsset from "../assets/logo-icon-new.asset.json";
 
@@ -103,6 +104,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      {
+        rel: "stylesheet",
+        href: mobileOverridesCss,
+      },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -130,8 +135,10 @@ function RootShell({ children }: { children: ReactNode }) {
           }}
         />
       </head>
-      <body>
-        {children}
+      <body className="overflow-x-hidden">
+        <div style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
+          {children}
+        </div>
         <Scripts />
       </body>
     </html>
