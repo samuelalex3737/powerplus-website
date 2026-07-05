@@ -39,7 +39,7 @@ export const sendContact = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const key = process.env.RESEND_API_KEY;
     if (!key) {
-      throw new Error("Email service is not configured.");
+      throw new Error("Missing RESEND_API_KEY environment variable");
     }
     const { Resend } = await import("resend");
     const resend = new Resend(key);
@@ -99,7 +99,7 @@ export const sendContact = createServerFn({ method: "POST" })
 
     if (error) {
       console.error("Resend error:", error);
-      throw new Error("Failed to send message.");
+      throw new Error(`Resend API Error: ${error.message || JSON.stringify(error)}`);
     }
     return { ok: true as const };
   });
