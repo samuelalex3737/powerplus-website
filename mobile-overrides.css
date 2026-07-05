@@ -1280,8 +1280,7 @@
   }
 
   /* Calculator card — must not overflow */
-  .calculator-card,
-  [class*="calculator"] {
+  .calculator-card {
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
