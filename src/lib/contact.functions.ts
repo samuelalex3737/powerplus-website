@@ -3,11 +3,11 @@
  * 1. Go to resend.com and create a free account.
  * 2. Go to API Keys -> Create API Key -> copy it -> paste into .env as RESEND_API_KEY.
  * 3. Free tier allows 3,000 emails/month — more than enough for a contact form.
- * 4. Optionally go to Domains -> Add Domain -> add powerplusllc.net -> follow DNS verification steps. 
- *    Once verified, change the 'from' address below from 'onboarding@resend.dev' to 'noreply@powerplusllc.net'.
- * 5. Test by submitting the contact form and checking joseph@powerplusllc.net inbox.
+ * 4. Optionally go to Domains -> Add Domain -> add powerplusllc.org -> follow DNS verification steps. 
+ *    Once verified, change the 'from' address below from 'noreply@powerplusllc.org' to 'noreply@powerplusllc.org'.
+ * 5. Test by submitting the contact form and checking joseph@powerplusllc.org inbox.
  * Note: The Resend account can be created using any email address. The API key is only used to authenticate.
- * What determines where the email lands is the 'to:' field in this code (joseph@powerplusllc.net).
+ * What determines where the email lands is the 'to:' field in this code (joseph@powerplusllc.org).
  */
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -90,10 +90,10 @@ export const sendContact = createServerFn({ method: "POST" })
     `;
 
     const { error } = await resend.emails.send({
-      from: "Power Plus Website <onboarding@resend.dev>",
-      to: [process.env.RESEND_TO_EMAIL || "joseph@powerplusllc.net"],
+      from: "Power Plus Website <noreply@powerplusllc.org>",
+      to: [process.env.RESEND_TO_EMAIL || "joseph@powerplusllc.org"],
       replyTo: data.email,
-      subject: `New enquiry via powerplusllc.net  -  ${data.subject}`,
+      subject: `New enquiry via powerplusllc.org  -  ${data.subject}`,
       html,
     });
 

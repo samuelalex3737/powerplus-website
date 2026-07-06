@@ -6,7 +6,7 @@ export const COMPANY = {
   director: "Joseph Alex",
   directorRole: "Director",
   title: "Director",
-  email: "joseph@powerplusllc.net",
+  email: "joseph@powerplusllc.org",
   emailAlt: "joseph@powerplusllc.com",
   phone: "+971 50 230 6745",
   phoneRaw: "+971502306745",
@@ -32,7 +32,7 @@ export const COMPANY = {
     "https://maps.google.com/maps?q=Sharjah+Media+City+Shams+Free+Zone+Sharjah&output=embed",
   hours: "Mon - Sat: 8AM - 7PM",
   founded: 2020,
-  website: "www.powerplusllc.net",
+  website: "www.powerplusllc.org",
   linkedin: "https://www.linkedin.com/in/joseph-alex-227aa6137/",
   green: "#94C120",
   whatsappVision:
