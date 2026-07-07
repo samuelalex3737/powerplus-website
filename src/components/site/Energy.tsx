@@ -565,8 +565,7 @@ export function Energy() {
           <div style={{ height: '100%' }}>
             {/* Pie chart  -  full width, standalone */}
             <Reveal className="h-full flex flex-col">
-              <div className="mt-16 lg:mt-0 h-full flex flex-col">
-                <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
+              <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
             <div
               className="chart-wrapper mt-8 rounded-[12px] p-6 h-full flex flex-col justify-center"
               style={{
@@ -641,15 +640,12 @@ export function Energy() {
                 Typical energy usage breakdown for a commercial building in UAE. Chillers alone account for 57.5% of total consumption  -  the single biggest opportunity for energy savings.
               </p>
             </div>
-          </div>
         </Reveal>
           </div>
           {/* Right column — savings calculator */}
           <div style={{ height: '100%' }}>
             {/* Calculator  -  centered, max-width 600px */}
-            <div className="mt-14 lg:mt-0 flex justify-center h-full w-full">
-              <Reveal className="h-full w-full max-w-[600px] flex flex-col">
-                <div className="h-full flex flex-col">
+            <Reveal className="h-full w-full max-w-[600px] flex flex-col mx-auto">
                   <div className="flex items-center justify-center gap-3 mb-8">
                     <Calculator className="h-8 w-8" style={{ color: "#94C120" }} />
                     <h3 className="text-center text-2xl font-bold sm:text-3xl">Estimate Your Energy Savings</h3>
@@ -733,9 +729,7 @@ export function Energy() {
                       </li>
                     </ul>
                   </div>
-                </div>
               </Reveal>
-            </div>
           </div>
         </div>
 
