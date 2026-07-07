@@ -557,18 +557,18 @@ export function Energy() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: '24px',
-            alignItems: 'start',
+            alignItems: 'stretch',
             margin: '32px 0',
           }}
         >
           {/* Left column — pie chart */}
           <div style={{ height: '100%' }}>
             {/* Pie chart  -  full width, standalone */}
-            <Reveal>
-              <div className="mt-16">
+            <Reveal className="h-full flex flex-col">
+              <div className="mt-16 lg:mt-0 h-full flex flex-col">
                 <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
             <div
-              className="chart-wrapper mt-8 rounded-3xl p-6"
+              className="chart-wrapper mt-8 rounded-[12px] p-6 h-full flex flex-col justify-center"
               style={{
                 background: "var(--card)",
                 border: "1px solid var(--pp-card-border)",
@@ -644,11 +644,11 @@ export function Energy() {
           </div>
 
           {/* Right column — savings calculator */}
-          <div style={{ height: '100%' }}>
+          <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {/* Calculator  -  centered, max-width 600px */}
-            <div className="mt-14 flex justify-center h-full">
-              <Reveal>
-            <div className="calculator-card w-full max-w-[600px] rounded-3xl p-8" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
+            <div className="mt-14 lg:mt-0 flex justify-center h-full w-full">
+              <Reveal className="h-full w-full max-w-[600px]">
+            <div className="calculator-card w-full max-w-[600px] rounded-[12px] p-6 h-full flex flex-col justify-center" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
               <div className="flex items-center gap-3">
                 <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
                 <h3 className="text-xl font-bold">Estimate Your Energy Savings</h3>
