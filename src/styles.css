@@ -228,3 +228,11 @@ select:-webkit-autofill:focus {
   0% { transform: scale(1); opacity: 0.55; }
   100% { transform: scale(1.8); opacity: 0; }
 }
+
+@media (max-width: 767px) {
+  .chart-calculator-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+

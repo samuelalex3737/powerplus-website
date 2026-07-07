@@ -551,10 +551,22 @@ export function Energy() {
           </div>
         </Reveal>
 
-        {/* Pie chart  -  full width, standalone */}
-        <Reveal>
-          <div className="mt-16">
-            <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
+        <div
+          className="chart-calculator-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '24px',
+            alignItems: 'start',
+            margin: '32px 0',
+          }}
+        >
+          {/* Left column — pie chart */}
+          <div style={{ height: '100%' }}>
+            {/* Pie chart  -  full width, standalone */}
+            <Reveal>
+              <div className="mt-16">
+                <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
             <div
               className="chart-wrapper mt-8 rounded-3xl p-6"
               style={{
@@ -629,10 +641,13 @@ export function Energy() {
             </div>
           </div>
         </Reveal>
+          </div>
 
-        {/* Calculator  -  centered, max-width 600px */}
-        <div className="mt-14 flex justify-center">
-          <Reveal>
+          {/* Right column — savings calculator */}
+          <div style={{ height: '100%' }}>
+            {/* Calculator  -  centered, max-width 600px */}
+            <div className="mt-14 flex justify-center h-full">
+              <Reveal>
             <div className="calculator-card w-full max-w-[600px] rounded-3xl p-8" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
               <div className="flex items-center gap-3">
                 <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
@@ -695,6 +710,8 @@ export function Energy() {
               </a>
             </div>
           </Reveal>
+            </div>
+          </div>
         </div>
 
         <Reveal>
