@@ -570,8 +570,10 @@ export function Energy() {
             <div
               className="chart-wrapper mt-8 rounded-[12px] p-6 h-full flex flex-col justify-center"
               style={{
-                background: "var(--card)",
-                border: "1px solid var(--pp-card-border)",
+                background: "var(--card-bg, var(--card))",
+                border: "1px solid var(--card-border, var(--pp-card-border))",
+                borderRadius: "12px",
+                padding: "24px"
               }}
             >
               <div className="dark:bg-white/[0.03] rounded-2xl p-4">
@@ -648,7 +650,17 @@ export function Energy() {
             {/* Calculator  -  centered, max-width 600px */}
             <div className="mt-14 lg:mt-0 flex justify-center h-full w-full">
               <Reveal className="h-full w-full max-w-[600px]">
-            <div className="calculator-card w-full max-w-[600px] rounded-[12px] p-6 h-full flex flex-col justify-center" style={{ background: "var(--card)", border: "1px solid var(--pp-card-border)" }}>
+                <div style={{
+                  height: '100%',
+                  background: 'var(--card-bg, var(--card))',
+                  border: '1px solid var(--card-border, var(--pp-card-border))',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}>
+                  <div className="calculator-card w-full max-w-[600px] h-full flex flex-col justify-center">
               <div className="flex items-center gap-3">
                 <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
                 <h3 className="text-xl font-bold">Estimate Your Energy Savings</h3>
@@ -708,8 +720,9 @@ export function Energy() {
               >
                 Or message Joseph on WhatsApp
               </a>
-            </div>
-          </Reveal>
+                  </div>
+                </div>
+              </Reveal>
             </div>
           </div>
         </div>
