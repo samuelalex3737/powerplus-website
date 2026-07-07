@@ -564,16 +564,19 @@ export function Energy() {
           {/* Left column — pie chart */}
           <div style={{ height: '100%' }}>
             {/* Pie chart  -  full width, standalone */}
-            <Reveal className="h-full">
-              <div
-                className="chart-wrapper rounded-[12px] p-6 h-full flex flex-col justify-center"
-                style={{
-                  background: "var(--card-bg, var(--card))",
-                  border: "1px solid var(--card-border, var(--pp-card-border))",
-                }}
-              >
-                <h3 className="text-center text-2xl font-bold sm:text-3xl mb-8">Where Does Your Energy Go?</h3>
-                <div className="dark:bg-white/[0.03] rounded-2xl p-4">
+            <Reveal className="h-full flex flex-col">
+              <div className="mt-16 lg:mt-0 h-full flex flex-col">
+                <h3 className="text-center text-2xl font-bold sm:text-3xl">Where Does Your Energy Go?</h3>
+            <div
+              className="chart-wrapper mt-8 rounded-[12px] p-6 h-full flex flex-col justify-center"
+              style={{
+                background: "var(--card-bg, var(--card))",
+                border: "1px solid var(--card-border, var(--pp-card-border))",
+                borderRadius: "12px",
+                padding: "24px"
+              }}
+            >
+              <div className="dark:bg-white/[0.03] rounded-2xl p-4">
                 <div className="flex justify-center w-full">
                   <PieChart width={280} height={280} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
                     <Pie
@@ -643,17 +646,22 @@ export function Energy() {
           </div>
 
           {/* Right column — savings calculator */}
-          <div style={{ height: '100%' }}>
+          <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {/* Calculator  -  centered, max-width 600px */}
-            <Reveal className="h-full">
-              <div 
-                className="calculator-card w-full h-full flex flex-col justify-center rounded-[12px] p-6" 
-                style={{ 
-                  background: "var(--card-bg, var(--card))", 
-                  border: "1px solid var(--card-border, var(--pp-card-border))" 
-                }}
-              >
-                <div className="flex items-center gap-3">
+            <div className="mt-14 lg:mt-0 flex justify-center h-full w-full">
+              <Reveal className="h-full w-full max-w-[600px]">
+                <div style={{
+                  height: '100%',
+                  background: 'var(--card-bg, var(--card))',
+                  border: '1px solid var(--card-border, var(--pp-card-border))',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}>
+                  <div className="calculator-card w-full max-w-[600px] h-full flex flex-col justify-center">
+              <div className="flex items-center gap-3">
                 <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
                 <h3 className="text-xl font-bold">Estimate Your Energy Savings</h3>
               </div>
@@ -712,8 +720,10 @@ export function Energy() {
               >
                 Or message Joseph on WhatsApp
               </a>
-              </div>
-            </Reveal>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </div>
 
