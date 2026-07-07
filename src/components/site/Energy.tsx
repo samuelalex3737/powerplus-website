@@ -644,82 +644,94 @@ export function Energy() {
           </div>
         </Reveal>
           </div>
-
           {/* Right column — savings calculator */}
-          <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ height: '100%' }}>
             {/* Calculator  -  centered, max-width 600px */}
             <div className="mt-14 lg:mt-0 flex justify-center h-full w-full">
-              <Reveal className="h-full w-full max-w-[600px]">
-                <div style={{
-                  height: '100%',
-                  background: 'var(--card-bg, var(--card))',
-                  border: '1px solid var(--card-border, var(--pp-card-border))',
-                  borderRadius: '12px',
-                  padding: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                }}>
-                  <div className="calculator-card w-full max-w-[600px] h-full flex flex-col justify-center">
-              <div className="flex items-center gap-3">
-                <Calculator className="h-6 w-6" style={{ color: "#94C120" }} />
-                <h3 className="text-xl font-bold">Estimate Your Energy Savings</h3>
-              </div>
-              <label className="calculator-label mt-4 block text-sm font-medium" style={{ color: "var(--pp-text)" }}>
-                What is your average monthly electricity bill?
-              </label>
-              <div
-                className="calculator-input-wrapper mt-2 flex items-center gap-2 rounded-xl px-4 py-3"
-                style={{ background: "var(--pp-input-bg)", border: "1px solid var(--pp-card-border)" }}
-              >
-                <span className="text-sm font-semibold" style={{ color: "#94C120" }}>AED</span>
-                <input
-                  type="number"
-                  inputMode="numeric"
-                  min={0}
-                  placeholder="15000"
-                  value={bill}
-                  onChange={(e) => setBill(e.target.value === "" ? "" : Number(e.target.value))}
-                  className="flex-1 min-w-0 w-full bg-transparent text-lg font-medium outline-none"
-                  style={{ color: "var(--pp-text)" }}
-                />
-                <span className="text-sm" style={{ color: "var(--pp-text-subtle)" }}>/month</span>
-              </div>
-              <div className="calculator-result mt-6 rounded-2xl p-5 text-center" style={{ background: "var(--accent)" }}>
-                <div className="calculator-result-label text-xs uppercase tracking-wider" style={{ color: "var(--pp-text-subtle)" }}>
-                  Estimated annual saving
-                </div>
-                {billNum > 0 ? (
-                  <>
-                    <div className="calculator-result-number mt-1 text-3xl font-bold" style={{ color: "#94C120" }}>
-                      AED {low.toLocaleString()} – AED {high.toLocaleString()}
-                    </div>
-                    <div className="calculator-result-sublabel mt-1 text-xs" style={{ color: "var(--pp-text-subtle)" }}>
-                      Based on 25–40% average energy reduction
-                    </div>
-                  </>
-                ) : (
-                  <div className="mt-2 text-sm" style={{ color: "var(--pp-text-subtle)" }}>
-                    Enter your monthly bill to see your savings
+              <Reveal className="h-full w-full max-w-[600px] flex flex-col">
+                <div className="h-full flex flex-col">
+                  <div className="flex items-center justify-center gap-3 mb-8">
+                    <Calculator className="h-8 w-8" style={{ color: "#94C120" }} />
+                    <h3 className="text-center text-2xl font-bold sm:text-3xl">Estimate Your Energy Savings</h3>
                   </div>
-                )}
-              </div>
-              <a
-                href="#contact"
-                className="calculator-cta-btn mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white"
-                style={{ background: "#94C120" }}
-              >
-                Get My Free Energy Audit
-              </a>
-              <a
-                href={COMPANY.whatsappEnergy}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="calculator-whatsapp-link mt-2 block text-center text-xs underline"
-                style={{ color: "var(--pp-text-subtle)" }}
-              >
-                Or message Joseph on WhatsApp
-              </a>
+                  <div 
+                    className="calculator-card w-full h-full flex flex-col justify-center rounded-[12px] p-6" 
+                    style={{ 
+                      background: "var(--card-bg, var(--card))", 
+                      border: "1px solid var(--card-border, var(--pp-card-border))" 
+                    }}
+                  >
+                    <label className="calculator-label block text-sm font-medium" style={{ color: "var(--pp-text)" }}>
+                      What is your average monthly electricity bill?
+                    </label>
+                    <div
+                      className="calculator-input-wrapper mt-2 flex items-center gap-2 rounded-xl px-4 py-3"
+                      style={{ background: "var(--pp-input-bg)", border: "1px solid var(--pp-card-border)" }}
+                    >
+                      <span className="text-sm font-semibold" style={{ color: "#94C120" }}>AED</span>
+                      <input
+                        type="number"
+                        inputMode="numeric"
+                        min={0}
+                        placeholder="15000"
+                        value={bill}
+                        onChange={(e) => setBill(e.target.value === "" ? "" : Number(e.target.value))}
+                        className="flex-1 min-w-0 w-full bg-transparent text-lg font-medium outline-none"
+                        style={{ color: "var(--pp-text)" }}
+                      />
+                      <span className="text-sm" style={{ color: "var(--pp-text-subtle)" }}>/month</span>
+                    </div>
+                    <div className="calculator-result mt-6 rounded-2xl p-5 text-center" style={{ background: "var(--accent)" }}>
+                      <div className="calculator-result-label text-xs uppercase tracking-wider" style={{ color: "var(--pp-text-subtle)" }}>
+                        Estimated annual saving
+                      </div>
+                      {billNum > 0 ? (
+                        <>
+                          <div className="calculator-result-number mt-1 text-3xl font-bold" style={{ color: "#94C120" }}>
+                            AED {low.toLocaleString()} – AED {high.toLocaleString()}
+                          </div>
+                          <div className="calculator-result-sublabel mt-1 text-xs" style={{ color: "var(--pp-text-subtle)" }}>
+                            Based on 25–40% average energy reduction
+                          </div>
+                        </>
+                      ) : (
+                        <div className="mt-2 text-sm" style={{ color: "var(--pp-text-subtle)" }}>
+                          Enter your monthly bill to see your savings
+                        </div>
+                      )}
+                    </div>
+                    <a
+                      href="#contact"
+                      className="calculator-cta-btn mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white"
+                      style={{ background: "#94C120" }}
+                    >
+                      Get My Free Energy Audit
+                    </a>
+                    <a
+                      href={COMPANY.whatsappEnergy}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="calculator-whatsapp-link mt-2 block text-center text-xs underline"
+                      style={{ color: "var(--pp-text-subtle)" }}
+                    >
+                      Or message Joseph on WhatsApp
+                    </a>
+
+                    {/* Value bullets */}
+                    <ul className="mt-8 space-y-3 text-sm" style={{ color: "var(--pp-text)" }}>
+                      <li className="flex items-start gap-2">
+                        <span className="text-xl leading-none" style={{ color: "#94C120" }}>✓</span>
+                        <span>Zero upfront cost options available</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-xl leading-none" style={{ color: "#94C120" }}>✓</span>
+                        <span>Average ROI in under 18 months</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-xl leading-none" style={{ color: "#94C120" }}>✓</span>
+                        <span>Free comprehensive facility audit</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </Reveal>
