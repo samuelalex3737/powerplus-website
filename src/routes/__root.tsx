@@ -86,14 +86,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Power Plus LLC  -  turnkey energy efficiency, AI building access control, and Cummins & Perkins diesel generator supply across UAE. Zero capex model. Shams Free Zone, Sharjah.",
+          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE — Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
       },
       { name: "author", content: "Power Plus LLC" },
       { property: "og:title", content: "Power Plus LLC | Sharjah, UAE" },
       {
         property: "og:description",
         content:
-          "Energy efficiency, AI access control, generator supply. Zero upfront cost. Serving the UAE from Shams Free Zone, Sharjah.",
+          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE — Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
       },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
