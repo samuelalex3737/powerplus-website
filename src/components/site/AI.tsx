@@ -108,6 +108,22 @@ export function AI() {
                   <img src={s.img} alt={s.title} className="aspect-[4/3] w-full object-cover" />
                 </div>
               )}
+              {s.title === "Verify" && (
+                <div className="mt-4">
+                  <img
+                    src="https://images.pexels.com/photos/5935791/pexels-photo-5935791.jpeg?auto=compress&cs=tinysrgb&w=900"
+                    alt="Digital identity verification"
+                    style={{
+                      width: '100%',
+                      height: '140px',
+                      objectFit: 'cover',
+                      borderRadius: '8px',
+                      marginBottom: '12px',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+              )}
               <h4 className="mt-4 font-bold uppercase tracking-wide">{s.title}</h4>
               <p className="mt-2 text-sm text-white/70">{s.body}</p>
             </motion.div>
