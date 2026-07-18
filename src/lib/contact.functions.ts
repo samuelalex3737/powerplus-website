@@ -1,8 +1,8 @@
-/**
+﻿/**
  * SETUP INSTRUCTIONS FOR RESEND EMAIL (for Joseph's son / developer):
  * 1. Go to resend.com and create a free account.
  * 2. Go to API Keys -> Create API Key -> copy it -> paste into .env as RESEND_API_KEY.
- * 3. Free tier allows 3,000 emails/month — more than enough for a contact form.
+ * 3. Free tier allows 3,000 emails/month - more than enough for a contact form.
  * 4. Optionally go to Domains -> Add Domain -> add powerplusllc.org -> follow DNS verification steps. 
  *    Once verified, change the 'from' address below from 'noreply@powerplusllc.org' to 'noreply@powerplusllc.org'.
  * 5. Test by submitting the contact form and checking joseph@powerplusllc.org inbox.
@@ -48,7 +48,7 @@ export const sendContact = createServerFn({ method: "POST" })
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #94C120; padding: 20px; border-radius: 8px 8px 0 0;">
           <h1 style="color: white; margin: 0; font-size: 20px;">
-            New Enquiry — Power Plus LLC Website
+            New Enquiry - Power Plus LLC Website
           </h1>
         </div>
         <div style="background: #f9f9f9; padding: 24px; border-radius: 0 0 8px 8px; border: 1px solid #e0e0e0;">
@@ -103,3 +103,4 @@ export const sendContact = createServerFn({ method: "POST" })
     }
     return { ok: true as const };
   });
+

@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+﻿import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -86,14 +86,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE — Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
+          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE - Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
       },
       { name: "author", content: "Power Plus LLC" },
       { property: "og:title", content: "Power Plus LLC | Sharjah, UAE" },
       {
         property: "og:description",
         content:
-          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE — Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
+          "Power Plus LLC supplies Cummins and Perkins diesel generators in UAE - Sharjah, Dubai, Abu Dhabi. Full kVA range, genuine spare parts, UAE-wide delivery. Contact Joseph Alex: +971 50 230 6745",
       },
       { property: "og:type", content: "website" },
       { name: "robots", content: "index, follow" },
@@ -153,3 +153,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+

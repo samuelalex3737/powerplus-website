@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback } from "react";
+﻿import { useEffect, useState, useRef, useCallback } from "react";
 import {
   Calculator,
   Leaf,
@@ -561,7 +561,7 @@ export function Energy() {
             margin: '32px 0',
           }}
         >
-          {/* Left column — pie chart */}
+          {/* Left column - pie chart */}
           <div style={{ height: '100%' }}>
             {/* Pie chart  -  full width, standalone */}
             <Reveal className="h-full flex flex-col">
@@ -642,7 +642,7 @@ export function Energy() {
             </div>
         </Reveal>
           </div>
-          {/* Right column — savings calculator */}
+          {/* Right column - savings calculator */}
           <div style={{ height: '100%' }}>
             {/* Calculator  -  centered, max-width 600px */}
             <Reveal className="h-full w-full max-w-[600px] flex flex-col mx-auto">
@@ -755,3 +755,4 @@ export function Energy() {
     </section>
   );
 }
+

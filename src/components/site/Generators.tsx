@@ -41,12 +41,12 @@ export function Generators() {
     <section id="generators" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "#94C120" }}>
               Generators
             </p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
-              Diesel Generator Supply — Sharjah, Dubai & UAE
+              Diesel Generator Supply - Sharjah, Dubai & UAE
             </h2>
             <p className="mt-4 text-base text-muted-foreground">
               Cummins and Perkins  -  the UAE's two most trusted generator brands.
@@ -89,7 +89,7 @@ export function Generators() {
         <Reveal>
           <div className="mt-8 text-[0.875rem] md:text-base text-muted-foreground leading-relaxed max-w-4xl mx-auto md:mx-0">
             <p>
-              Power Plus LLC supplies heavy-duty diesel generators across the UAE including Sharjah, Dubai, Abu Dhabi, and the Northern Emirates. We stock Cummins and Perkins generators from 20 kVA to 2,500 kVA, with genuine OEM spare parts available for all models. Whether you need a generator for construction, a data centre, healthcare, hospitality, or industrial use — contact Joseph Alex directly on +971 50 230 6745 or WhatsApp for a same-day quote.
+              Power Plus LLC supplies heavy-duty diesel generators across the UAE including Sharjah, Dubai, Abu Dhabi, and the Northern Emirates. We stock Cummins and Perkins generators from 20 kVA to 2,500 kVA, with genuine OEM spare parts available for all models. Whether you need a generator for construction, a data centre, healthcare, hospitality, or industrial use - contact Joseph Alex directly on +971 50 230 6745 or WhatsApp for a same-day quote.
             </p>
           </div>
         </Reveal>
@@ -163,3 +163,4 @@ export function Generators() {
     </section>
   );
 }
+

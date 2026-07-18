@@ -8,12 +8,12 @@ import { COMPANY } from "@/lib/constants";
 const PROBLEMS = [
   "Dedicated ANPR cameras: AED 15,000–30,000+ per unit",
   "Separate facial recognition hardware",
-  "Physical building access cards — easy to lose or clone",
+  "Physical building access cards - easy to lose or clone",
   "Multiple vendors, multiple support contracts",
   "High ongoing hardware maintenance",
 ];
 const SOLUTIONS = [
-  "Works with your existing CCTV cameras — no new hardware",
+  "Works with your existing CCTV cameras - no new hardware",
   "Vehicle number plate recognition via AI software",
   "Facial recognition for residents and staff",
   "Automated parking barrier control",
@@ -24,8 +24,8 @@ const SOLUTIONS = [
 const STEPS = [
   { n: "01", title: "Capture", img: IMG.aiCapture, body: "Your existing camera captures the vehicle or person at the entry point. No hardware upgrade required." },
   { n: "02", title: "Process", img: IMG.aiProcess, body: "The AI software analyses the image in real time, matching the plate number or facial profile against the approved access database." },
-  { n: "03", title: "Verify", img: null, body: "System confirms identity in milliseconds. Access granted or flagged for review — with a full timestamped audit log." },
-  { n: "04", title: "Access", img: IMG.aiAccess, body: "The barrier opens. The lift grants correct floor access. The resident enters — no card, no buzzer, no delay." },
+  { n: "03", title: "Verify", img: null, body: "System confirms identity in milliseconds. Access granted or flagged for review - with a full timestamped audit log." },
+  { n: "04", title: "Access", img: IMG.aiAccess, body: "The barrier opens. The lift grants correct floor access. The resident enters - no card, no buzzer, no delay." },
 ];
 
 const USE_CASES = [
@@ -50,7 +50,7 @@ export function AI() {
     <section id="ai" className="relative px-6 py-24 text-white" style={{ backgroundColor: "#111A05" }}>
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
-          <div className="max-w-3xl">
+          <div className="max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-wider" style={{ color: "#94C120" }}>AI Access Control</p>
             <h2 className="mt-3 text-3xl font-bold sm:text-4xl md:text-5xl">
               AI-Powered Building Access Control
@@ -148,10 +148,10 @@ export function AI() {
         <Reveal>
           <figure className="mt-16 rounded-3xl p-8" style={{ borderLeft: "4px solid #94C120", background: "rgba(148,193,32,0.08)" }}>
             <blockquote className="text-lg italic text-white/90 sm:text-xl">
-              "We co-developed and deployed an AI access control system that integrates with existing cameras to deliver vehicle and facial recognition for parking and lift access — replacing traditional ANPR hardware at a fraction of the cost."
+              "We co-developed and deployed an AI access control system that integrates with existing cameras to deliver vehicle and facial recognition for parking and lift access - replacing traditional ANPR hardware at a fraction of the cost."
             </blockquote>
             <figcaption className="mt-4 text-sm text-white/60">
-              — {COMPANY.director}, Director, {COMPANY.legalName}
+              - {COMPANY.director}, Director, {COMPANY.legalName}
             </figcaption>
           </figure>
         </Reveal>
@@ -173,3 +173,4 @@ export function AI() {
     </section>
   );
 }
+
