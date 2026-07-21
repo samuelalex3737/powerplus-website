@@ -18,7 +18,7 @@ const VALUES = [
 
 export function About() {
   return (
-    <section id="about" className="px-6 py-24" style={{ background: "var(--pp-section-alt)" }}>
+    <section id="about" className="px-6 py-24" style={{ background: "var(--section-alt)" }}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div className="max-w-3xl">

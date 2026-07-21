@@ -236,3 +236,27 @@ select:-webkit-autofill:focus {
   }
 }
 
+
+:root {
+  --bg-secondary: #FFFFFF;
+  --section-alt:  #F7F7F5;
+}
+
+[data-theme="dark"] {
+  --bg:          #0D1505;
+  --bg-secondary: #111A05;
+  --card-bg:     #1E3008;
+  --card-border: #3A5A18;
+}
+
+[data-theme="dark"] .carousel-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .generator-card,
+[data-theme="dark"] .fact-card,
+[data-theme="dark"] .value-card,
+[data-theme="dark"] .detail-panel {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] { --section-alt: var(--bg-secondary); }
+

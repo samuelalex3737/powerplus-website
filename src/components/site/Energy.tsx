@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import {
   Calculator,
   Leaf,
@@ -289,7 +289,7 @@ export function Energy() {
   }, []);
 
   return (
-    <section id="energy" className="energy-section relative px-6 py-24" style={{ background: "var(--pp-section-alt)" }}>
+    <section id="energy" className="energy-section relative px-6 py-24" style={{ background: "var(--bg-secondary)" }}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <div className="max-w-3xl text-center md:text-left mx-auto md:mx-0">
