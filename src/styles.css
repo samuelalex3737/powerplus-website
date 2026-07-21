@@ -29,9 +29,9 @@ select:-webkit-autofill:focus {
 }
 
 /* Light mode autofill */
-[data-theme="light"] input:-webkit-autofill,
-[data-theme="light"] input:-webkit-autofill:hover,
-[data-theme="light"] input:-webkit-autofill:focus {
+html:not(.dark) input:-webkit-autofill,
+html:not(.dark) input:-webkit-autofill:hover,
+html:not(.dark) input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
   box-shadow: 0 0 0 1000px #ffffff inset !important;
   -webkit-text-fill-color: #1A1A1A !important;
@@ -241,7 +241,7 @@ select:-webkit-autofill:focus {
   --bg-secondary: #FFFFFF;
   --section-alt:  #F7F7F5;
 }
-[data-theme="dark"] {
+.dark {
   --bg-secondary: var(--background);
   --section-alt: var(--pp-section-alt);
 }
